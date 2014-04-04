@@ -1,0 +1,9 @@
+begin graph 
+size 10 10 
+data Fres.txt
+d1 line color red
+d2 line color black
+d10 line color green
+d100 lwidth 0.01 line  color black
+
+end graph
