@@ -1,10 +1,13 @@
-#ifndef DIFFUSION_H_
-#define DIFFUSION_H_
+#ifndef _DIFFUSION_H_
+#define _DIFFUSION_H_
 #include "common.h"
 #include <vector>
+typedef std::vector<long double> VecLong;
+VecLong first_kind(const VecLong &f0, long double p);
+VecLong second_kind(const VecLong &f0, long double p);
+VecLong first_kind_nonclear(const VecLong &f0, long double p);
+VecLong init1();
 
-std::vector<long double> first_kind(const std::vector<long double> &f0, long double p);
-std::vector<long double> second_kind(const std::vector<long double> &f0, long double p);
-std::vector<long double> first_kind_nonclear(const std::vector<long double> &f0, long double p);
-std::vector<long double> init();
+std::vector<double> convect(const VecLong & in);
+
 #endif

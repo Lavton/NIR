@@ -5,16 +5,17 @@
 #include <vector>
 #include "common.h"
 #include "diffusion.h"
+#include "transport.h"
 using namespace std;
 
-int main(){
+void diffus(){
 	ifstream inf("f0.txt");
 	ofstream outf("Fres.txt");
-	std::vector< std::vector<long double> > answer;
-	answer.push_back(CommonMethods::Instance().get_all_x());
+	std::vector< std::vector<double> > answer;
+	answer.push_back(convect(CommonMethods::Instance().get_all_x()));
 	long double p=1;
-	std::vector<long double> f0=init();
-	answer.push_back(f0);
+	std::vector<long double> f0=init1();
+	answer.push_back(convect(f0));
 	int xN=f0.size();
 	int tN=CommonMethods::Instance().get_t_numbers();
 
@@ -23,7 +24,7 @@ int main(){
 		std::vector<long double> f1 = first_kind(f0, p);
 		if(i==CommonMethods::Instance().get_last_line_number()){
 			cerr<<CommonMethods::Instance().get_last_line_number()<<endl;
-			answer.push_back(f1);
+			answer.push_back(convect(f1));
 			CommonMethods::Instance().inc_line_number_counter();
 		}
 		swap(f0,f1);
@@ -36,6 +37,9 @@ int main(){
 		outf<<endl;
 	}
 
+}
+int main(){
+	diffus();
 
 	return 0;
 }

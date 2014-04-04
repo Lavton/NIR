@@ -5,8 +5,8 @@
 #include <vector>
 #include "diffusion.h"
 using namespace std;
-vector<long double> first_kind(const vector<long double> &f0, long double p){
-	vector<long double> f1;
+VecLong first_kind(const VecLong &f0, long double p){
+	VecLong f1;
 	f1.push_back(0);
 	CommonMethods::Instance().clear_corrent_x();
 	int xN=f0.size();
@@ -24,8 +24,8 @@ vector<long double> first_kind(const vector<long double> &f0, long double p){
 	return f1;
 }
 
-vector<long double> second_kind(const vector<long double> &f0, long double p){
-	vector<long double> f1;
+VecLong second_kind(const VecLong &f0, long double p){
+	VecLong f1;
 	int xN=f0.size();
 	f1.push_back(0);
 	CommonMethods::Instance().clear_corrent_x();
@@ -41,10 +41,10 @@ vector<long double> second_kind(const vector<long double> &f0, long double p){
 	f1.push_back(f1[f1.size()-2]);
 	return f1;
 }
-vector<long double> first_kind_nonclear(const vector<long double> &f0, long double p){
-	std::vector<long double> A;
-	std::vector<long double> B;
-	std::vector<long double> C;
+VecLong first_kind_nonclear(const VecLong &f0, long double p){
+	VecLong A;
+	VecLong B;
+	VecLong C;
 	int xN=f0.size();
 	CommonMethods::Instance().clear_corrent_x();
 	for (int i = 0; i < xN; ++i){
@@ -59,8 +59,8 @@ vector<long double> first_kind_nonclear(const vector<long double> &f0, long doub
 	return CommonMethods::matrixSolver(A,B,C,f0);
 }
 
-std::vector<long double> init(){
-	std::vector<long double> f0;
+VecLong init1(){
+	VecLong f0;
 	int xN=CommonMethods::Instance().get_x_numbers();
 	for (int i=0; i<xN/2; i++){
 		f0.push_back(i*0.5);
@@ -70,4 +70,13 @@ std::vector<long double> init(){
 	}
 	return f0;
 
+}
+
+std::vector<double> convect(const VecLong & in){
+	std::vector<double> v(in.size());
+	for (int i = 0; i < in.size(); ++i)
+	{
+		v[i] = (double) in[i];
+	}
+	return v;
 }
