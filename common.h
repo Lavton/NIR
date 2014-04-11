@@ -31,12 +31,18 @@ public:
 	    return theSingleInstance;
 	}
     int get_t_numbers() const;
+    int get_p_numbers() const;
     int get_x_numbers() const;
     long double get_next_dx();
+    long double get_next_dp();
+    long double get_this_p();
     long double get_next_dt();
     int get_corrent_x_num() const;
     void clear_corrent_x();
+    int get_corrent_p_num() const;
+    void clear_corrent_p();
     std::vector<long double> get_all_x() const;
+    std::vector<long double> get_all_p() const;
     int get_last_line_number() const;
     void inc_line_number_counter();
 private:        
@@ -50,5 +56,10 @@ private:
 	int corrent_x;
 	std::vector<int> line_numbers;
 	int line_number_counter;
+	long double p_min;
+	long double p_max;
+	std::vector<long double> p;
+	int pN;
+	int corrent_p;
 };
 #endif

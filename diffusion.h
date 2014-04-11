@@ -1,4 +1,4 @@
-#ifndef _DIFFUSION_H_
+						#ifndef _DIFFUSION_H_
 #define _DIFFUSION_H_
 #include "common.h"
 #include <vector>
@@ -10,4 +10,4 @@ VecLong init1();
 
 std::vector<double> convect(const VecLong & in);
 
-#endif
+#endif																																	
