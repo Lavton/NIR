@@ -45,10 +45,13 @@ void transp(){
 	answer.push_back(CommonMethods::Instance().convect(CommonMethods::Instance().get_all_x()));
 	long double p=1;
 	MatrixVector f0=init();
-		int pN=f0.size();
+	int pN=f0.size();
 	int tN=CommonMethods::Instance().get_t_numbers();
 	for (int i=1; i<tN; i++){
+
 		MatrixVector f1=first_kind_nonclear(f0);
+
+				cerr<<"t= "<<i<<endl;
 		swap(f0,f1);
 	}
 	for (int j = 0; j < pN; ++j){

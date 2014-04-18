@@ -1,19 +1,22 @@
 #include "transport.h"
 #include <cmath>
 #include "common.h"
+#include <iostream>
 using namespace std;
 MatrixVector init(){
 	MatrixVector v;
 	int pN=CommonMethods::Instance().get_p_numbers();
 	int xN=CommonMethods::Instance().get_x_numbers();
-	v.reserve(pN);
+
 	for (int i = 0; i < pN; ++i)
 	{
-		v[i].reserve(xN);
-		for (int j = 0; j < xN; ++j)
-		{
-			v[i][j]=0;
+
+		VecLong v0(xN);
+		for (int j = 0; j < xN; ++j){
+			v0[j]=0;
 		}
+		v.push_back(v0);
+
 	}
 	return v;
 }
