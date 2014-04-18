@@ -42,14 +42,17 @@ VecLong second_kind(const VecLong &f0, long double p){
 	return f1;
 }
 VecLong first_kind_nonclear(const VecLong &f0, long double p){
+	/**
+[A C B]
+	*/
 	VecLong A;
 	VecLong B;
 	VecLong C;
 	int xN=f0.size();
+	long double dt = CommonMethods::Instance().get_next_dt();
 	CommonMethods::Instance().clear_corrent_x();
 	for (int i = 0; i < xN; ++i){
 		long double dx = CommonMethods::Instance().get_next_dx();
-		long double dt = CommonMethods::Instance().get_next_dt();
 		A.push_back(-p*p*dt/(dx*dx));
 		C.push_back(+2*p*p*dt/(dx*dx)+1);
 		B.push_back(-p*p*dt/(dx*dx));
