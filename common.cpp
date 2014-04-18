@@ -45,9 +45,6 @@ CommonMethods::CommonMethods(){
         }
     }
     line_number_counter = 0;
-
-
-
 }
 
 //t
@@ -163,4 +160,11 @@ CommonMethods::CommonMethods(){
             line_number_counter++;
         }
     }
-
+    std::vector<double> CommonMethods::convect(const VecLong & in){
+        std::vector<double> v(in.size());
+        for (int i = 0; i < in.size(); ++i)
+        {
+            v[i] = (double) in[i];
+        }
+        return v;
+    }

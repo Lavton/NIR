@@ -65,6 +65,7 @@ private:
 	double Q0;
 	double D0;
 public:
+	std::vector<double> convect(const VecLong & in);
 	double get_Q0() const;
 	double get_D0() const;
     int get_last_line_number() const;

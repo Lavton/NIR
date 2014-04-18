@@ -18,7 +18,7 @@ MatrixVector init(){
 	return v;
 }
 
-MatrixVector first_kind_nonclear(const MatrixVector &f0, long double p){
+MatrixVector first_kind_nonclear(const MatrixVector &f0){
 
 	MatrixVector f1; //(f0.size());
 	VecLong A, B, C, F;
@@ -53,6 +53,9 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0, long double p){
 			C[j] = 1+2*CommonMethods::Instance().get_D0()*thisP*dt/(dx*dx)-nextU*dt/dx;
 			B[j] = -dt*CommonMethods::Instance().get_D0()*thisP/(dx*dx);
 		}
+		F[f0[i].size()-1]=0;
+		A[f0[i].size()-1]=0;
+		C[f0[i].size()-1]=0;
 		B[f0[i].size()-1] = 0;
 		f1.push_back(CommonMethods::matrixSolver(A,B,C,F));
 		f1[i].reserve(f0[i].size());

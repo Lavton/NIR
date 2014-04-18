@@ -75,11 +75,3 @@ VecLong init1(){
 
 }
 
-std::vector<double> convect(const VecLong & in){
-	std::vector<double> v(in.size());
-	for (int i = 0; i < in.size(); ++i)
-	{
-		v[i] = (double) in[i];
-	}
-	return v;
-}

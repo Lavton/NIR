@@ -7,6 +7,6 @@ VecLong second_kind(const VecLong &f0, long double p);
 VecLong first_kind_nonclear(const VecLong &f0, long double p);
 VecLong init1();
 
-std::vector<double> convect(const VecLong & in);
+
 
 #endif																																	

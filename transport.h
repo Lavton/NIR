@@ -5,7 +5,7 @@
 
 MatrixVector first_kind(const MatrixVector &f0, long double p);
 MatrixVector second_kind(const MatrixVector &f0, long double p);
-MatrixVector first_kind_nonclear(const MatrixVector &f0, long double p);
+MatrixVector first_kind_nonclear(const MatrixVector &f0);
 MatrixVector init();
 
 
