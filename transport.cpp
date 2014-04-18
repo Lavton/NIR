@@ -32,14 +32,17 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 	long double dt = CommonMethods::Instance().get_next_dt();
 	VecLong f10;
 	for (int i = 0; i < f0.size(); ++i){
-		f10[i]=0;
+		f10.push_back(0);
 	}
 	f1.push_back(f10);
 	for (int i = 1; i < f0.size(); ++i){
+		cerr<<i<<endl;
+		cerr<<"Here0\n";
 		CommonMethods::Instance().clear_corrent_u();
 		long double thisP = CommonMethods::Instance().get_this_p();
 		long double dlogP = CommonMethods::Instance().get_next_dlogp();
 		A[0]=0;
+		cerr<<"Here1\n";
 		for (int j = 0; j < f0[i].size()-1; ++j){
 			double thisU = CommonMethods::Instance().get_this_u();
 			double nextU = CommonMethods::Instance().get_next_u();
@@ -56,12 +59,16 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 			C[j] = 1+2*CommonMethods::Instance().get_D0()*thisP*dt/(dx*dx)-nextU*dt/dx;
 			B[j] = -dt*CommonMethods::Instance().get_D0()*thisP/(dx*dx);
 		}
+		cerr<<"Here3\n";
 		F[f0[i].size()-1]=0;
 		A[f0[i].size()-1]=0;
 		C[f0[i].size()-1]=0;
 		B[f0[i].size()-1] = 0;
+		cout<<"Here4\n"<<A[898]<<" "<<C.size()<<" "<<B.size()<<" "<<F.size()<<endl;
 		f1.push_back(CommonMethods::matrixSolver(A,B,C,F));
-		f1[i].reserve(f0[i].size());
+//		f1[i].reserve(f0[i].size());
+		cerr<<"Here5\n";
 	}
+	cerr<<"Here 3\n";
 	return f1;
 }
