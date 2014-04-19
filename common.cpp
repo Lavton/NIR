@@ -4,11 +4,11 @@
 #include <iostream>
 CommonMethods::CommonMethods(){
 //t
-    tN=10000;
+    tN=103;
     dt=0.005;
 
 //x
-    xN=900;
+    xN=500;
     for (int i = 0; i < xN; ++i){
         dx.push_back(0.1);
     }
@@ -16,11 +16,11 @@ CommonMethods::CommonMethods(){
     x_inj_N = 50;
 
 //p
-    pN=900;
-    p_min=0.01;
+    pN=500;
+    p_min=0.1;
     p_max=1000;
     corrent_p=0;
-    p_inj_N = 100;
+    p_inj_N = 10;
     p.push_back(p_min);
     for (int i = 1; i < pN; ++i){
         p.push_back(pow(10, log10(p[0])+log10(p_max/p_min)*(i)/pN));

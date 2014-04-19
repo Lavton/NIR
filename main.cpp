@@ -47,7 +47,7 @@ void transp(){
 	int pN=f0.size();
 	int tN=CommonMethods::Instance().get_t_numbers();
 	for (int i=1; i<tN; i++){
-
+		cout<<"t № "<<i<<endl;
 		MatrixVector f1=first_kind_nonclear(f0);
 
 		swap(f0,f1);

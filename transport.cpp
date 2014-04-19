@@ -60,7 +60,6 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 		A[f0[i].size()-1]=0;
 		C[f0[i].size()-1]=0;
 		B[f0[i].size()-1] = 0;
-		cout<<"Here4\n"<<xN<<" "<<A.size()<<" "<<C.size()<<" "<<B.size()<<" "<<F.size()<<endl;
 		f1.push_back(CommonMethods::matrixSolver(A,B,C,F));
 //		f1[i].reserve(f0[i].size());
 	}
