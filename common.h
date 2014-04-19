@@ -1,5 +1,6 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_ 
+#include <iostream>
 #include <vector>
 typedef std::vector<long double> VecLong;
 typedef std::vector< std::vector<long double> > MatrixVector;
@@ -71,12 +72,14 @@ public:
     int get_last_line_number() const;
     void inc_line_number_counter();
 	static std::vector <long double> matrixSolver (const std::vector<long double>& A, 
-		const std::vector<long double>& B, const std::vector<long double>& C, 
-		const std::vector<long double>& F)
-	{
+			const std::vector<long double>& B, const std::vector<long double>& C, 
+			const std::vector<long double>& F){
+
 	    int N=A.size();
+
 	    std::vector<long double> alpha(N);
 	    std::vector<long double> beta(N);
+
 	    alpha[0]=(B[0]/C[0]);
 	    beta[0]=(F[0]/C[0]);
 	    for (int i = 1; i < N-1; ++i)   

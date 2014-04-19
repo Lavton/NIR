@@ -23,7 +23,6 @@ void diffus(){
 		cout<<"t= "<<i*CommonMethods::Instance().get_next_dt()<<endl;
 		std::vector<long double> f1 = first_kind(f0, p);
 		if(i==CommonMethods::Instance().get_last_line_number()){
-			cerr<<CommonMethods::Instance().get_last_line_number()<<endl;
 			answer.push_back(CommonMethods::Instance().convect(f1));
 			CommonMethods::Instance().inc_line_number_counter();
 		}
@@ -51,7 +50,6 @@ void transp(){
 
 		MatrixVector f1=first_kind_nonclear(f0);
 
-				cerr<<"t= "<<i<<endl;
 		swap(f0,f1);
 	}
 	for (int j = 0; j < pN; ++j){

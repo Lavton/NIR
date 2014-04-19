@@ -24,26 +24,23 @@ MatrixVector init(){
 MatrixVector first_kind_nonclear(const MatrixVector &f0){
 
 	MatrixVector f1; //(f0.size());
-	VecLong A, B, C, F;
-	A.reserve(f0[0].size());
-	B.reserve(f0[0].size());
-	C.reserve(f0[0].size());
-	F.reserve(f0[0].size());
+	int xN = f0[0].size();
+	VecLong A(xN);
+	VecLong B(xN);
+	VecLong C(xN);
+	VecLong F(xN);
 	long double dt = CommonMethods::Instance().get_next_dt();
 	VecLong f10;
-	for (int i = 0; i < f0.size(); ++i){
+	for (int i = 0; i < xN; ++i){
 		f10.push_back(0);
 	}
 	f1.push_back(f10);
 	for (int i = 1; i < f0.size(); ++i){
-		cerr<<i<<endl;
-		cerr<<"Here0\n";
 		CommonMethods::Instance().clear_corrent_u();
 		long double thisP = CommonMethods::Instance().get_this_p();
 		long double dlogP = CommonMethods::Instance().get_next_dlogp();
 		A[0]=0;
-		cerr<<"Here1\n";
-		for (int j = 0; j < f0[i].size()-1; ++j){
+		for (int j = 0; j < xN-1; ++j){
 			double thisU = CommonMethods::Instance().get_this_u();
 			double nextU = CommonMethods::Instance().get_next_u();
 			long double dx = CommonMethods::Instance().get_next_dx();
@@ -59,16 +56,13 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 			C[j] = 1+2*CommonMethods::Instance().get_D0()*thisP*dt/(dx*dx)-nextU*dt/dx;
 			B[j] = -dt*CommonMethods::Instance().get_D0()*thisP/(dx*dx);
 		}
-		cerr<<"Here3\n";
 		F[f0[i].size()-1]=0;
 		A[f0[i].size()-1]=0;
 		C[f0[i].size()-1]=0;
 		B[f0[i].size()-1] = 0;
-		cout<<"Here4\n"<<A[898]<<" "<<C.size()<<" "<<B.size()<<" "<<F.size()<<endl;
+		cout<<"Here4\n"<<xN<<" "<<A.size()<<" "<<C.size()<<" "<<B.size()<<" "<<F.size()<<endl;
 		f1.push_back(CommonMethods::matrixSolver(A,B,C,F));
 //		f1[i].reserve(f0[i].size());
-		cerr<<"Here5\n";
 	}
-	cerr<<"Here 3\n";
 	return f1;
 }
