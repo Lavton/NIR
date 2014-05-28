@@ -10,4 +10,6 @@ transport.o: transport.cpp transport.h
 	g++ -c transport.cpp
 
 clean:
-	rm *.o main *.eps *.txt *.pdf
+	rm -f *.o main *.eps *.txt *.pdf
+cleanM:
+	rm -f main

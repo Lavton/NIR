@@ -1,5 +1,6 @@
 #include "transport.h"
 #include <cmath>
+#include <stdio.h>
 #include "common.h"
 #include <iostream>
 using namespace std;
@@ -30,6 +31,7 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 	VecLong C(xN);
 	VecLong F(xN);
 	long double dt = CommonMethods::Instance().get_next_dt();
+	long double D0 = CommonMethods::Instance().get_D0();
 	VecLong f10;
 	for (int i = 0; i < xN; ++i){
 		f10.push_back(0);
@@ -37,29 +39,47 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 	f1.push_back(f10);
 	for (int i = 1; i < f0.size(); ++i){
 		CommonMethods::Instance().clear_corrent_u();
-		long double thisP = CommonMethods::Instance().get_this_p();
+		long double thisP = CommonMethods::Instance().p[i];
 		long double dlogP = CommonMethods::Instance().get_next_dlogp();
+		long double dx = CommonMethods::Instance().get_next_dx();
 		A[0]=0;
-		for (int j = 0; j < xN-1; ++j){
-			double thisU = CommonMethods::Instance().get_this_u();
-			double nextU = CommonMethods::Instance().get_next_u();
-			long double dx = CommonMethods::Instance().get_next_dx();
-			F[j]=f0[i][j]-1.0*(nextU-thisU)*dt*f1[i-1][j+1]/(3*dx*dlogP);
+		C[0]=-1/dt - CommonMethods::Instance().u[0]/dx - D0* thisP*thisP/(dx*dx);
+		B[0]=D0*thisP/(dx*dx);
+		F[0]=-f0[i][0];
+		for (int j = 1; j < xN-2; ++j){
+			double prevU = CommonMethods::Instance().u[j-1];
+			double thisU = CommonMethods::Instance().u[j];
+			A[j] = thisU/dx + D0*thisP/(dx*dx);
+			C[j] = (thisU-prevU)/(3.0*dx*dlogP)+(4*(thisU-prevU))/(3*dx);
+			C[j] = C[j] - 1/dt - thisU/dx - D0*thisP*thisP/(dx*dx);
+			B[j]=D0*thisP/(dx*dx);
+			F[j]=-f0[i][j]/dt - (f1[i-1][j]/3.0)*(thisU-prevU)/dlogP;
 			if ((j == CommonMethods::Instance().get_p_inj_N()) && (i == CommonMethods::Instance().get_x_inj_N())){
-				F[j]+=CommonMethods::Instance().get_Q0()*pow(thisP,4)*dt;
+				F[j]+=CommonMethods::Instance().get_Q0()*pow(thisP,4);
 			}
-			if (j > 0){
-				A[j] = -(nextU - thisU)*dt*(4 + 1/dlogP)/(3*dx);
-				A[j]-=CommonMethods::Instance().get_D0()*thisP*dt/(dx*dx);
-				A[j]+=nextU*dt/dx;
-			}
-			C[j] = 1+2*CommonMethods::Instance().get_D0()*thisP*dt/(dx*dx)-nextU*dt/dx;
-			B[j] = -dt*CommonMethods::Instance().get_D0()*thisP/(dx*dx);
 		}
-		F[f0[i].size()-1]=0;
-		A[f0[i].size()-1]=0;
-		C[f0[i].size()-1]=0;
-		B[f0[i].size()-1] = 0;
+		double prevU = CommonMethods::Instance().u[xN-2];
+		double thisU = CommonMethods::Instance().u[xN-1];
+		A[xN-1] = thisU/dx + D0*thisP/(dx*dx);
+		C[xN-1] = (thisU-prevU)/(3.0*dx*dlogP)+(4*(thisU-prevU))/(3*dx);
+		C[xN-1] = C[xN-1] - 1/dt - thisU/dx - D0*thisP*thisP/(dx*dx);
+		B[xN-1] = 0;
+		F[xN-1]=-f0[i][xN-1]/dt - (f1[i-1][xN-1]/3.0)*(thisU-prevU)/dlogP;
+		if ((xN-1 == CommonMethods::Instance().get_p_inj_N()) && (i == CommonMethods::Instance().get_x_inj_N())){
+			F[xN-1]+=CommonMethods::Instance().get_Q0()*pow(thisP,4);
+		}
+//	cout<<"Here\n";
+		cout<<"A = ";
+		CommonMethods::printVecLong(A);
+		cout<<"C = ";
+		CommonMethods::printVecLong(C);
+		cout<<"B = ";
+		CommonMethods::printVecLong(B);
+		cout<<"F = ";
+		CommonMethods::printVecLong(F);
+
+//		CommonMethods::printMatrixVector(f0);
+		getchar();
 		f1.push_back(CommonMethods::matrixSolver(A,B,C,F));
 //		f1[i].reserve(f0[i].size());
 	}

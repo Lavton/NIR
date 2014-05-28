@@ -1,5 +1,7 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_ 
+#include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <vector>
 typedef std::vector<long double> VecLong;
@@ -23,11 +25,10 @@ public:
     void clear_corrent_p();
     std::vector<long double> get_all_p() const;
     int get_p_inj_N() const;
-
+	std::vector<long double> p;
 private:
 	long double p_min;
 	long double p_max;
-	std::vector<long double> p;
 	int pN;
 	int corrent_p;
 	int p_inj_N;
@@ -40,8 +41,9 @@ public:
     void clear_corrent_x();
     std::vector<long double> get_all_x() const;
     int get_x_inj_N() const;
+    std::vector<long double> dx;
 private:
-	std::vector<long double> dx;
+	
 	int xN;
 	int corrent_x;
 	int x_inj_N;
@@ -51,8 +53,9 @@ public:
     double get_next_u();
     double get_this_u();
     void clear_corrent_u(); 
+    std::vector<double> u;
 private:
-	std::vector<double> u;
+	
 	int corrent_u;
 	double u0;
 
@@ -71,6 +74,19 @@ public:
 	double get_D0() const;
     int get_last_line_number() const;
     void inc_line_number_counter();
+	static void printVecLong(VecLong v) {
+		for (int i = 0; i < v.size(); ++i){
+//			std::cout.precision(2);
+			std::cout.width(7);
+			std::cout<<v.at(i)<<" ";
+		}
+		std::cout<<std::endl;
+	}
+	static void printMatrixVector(MatrixVector v) {
+		for (int i = 0; i < v.size(); ++i) {
+			printVecLong(v.at(i));
+		}
+	}
 	static std::vector <long double> matrixSolver (const std::vector<long double>& A, 
 			const std::vector<long double>& B, const std::vector<long double>& C, 
 			const std::vector<long double>& F){

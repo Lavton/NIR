@@ -4,23 +4,23 @@
 #include <iostream>
 CommonMethods::CommonMethods(){
 //t
-    tN=103;
+    tN=2;
     dt=0.005;
 
 //x
-    xN=500;
+    xN=10;
     for (int i = 0; i < xN; ++i){
         dx.push_back(0.1);
     }
     corrent_x=0;
-    x_inj_N = 50;
+    x_inj_N = 5;
 
 //p
-    pN=500;
+    pN=10;
     p_min=0.1;
     p_max=1000;
     corrent_p=0;
-    p_inj_N = 10;
+    p_inj_N = 1;
     p.push_back(p_min);
     for (int i = 1; i < pN; ++i){
         p.push_back(pow(10, log10(p[0])+log10(p_max/p_min)*(i)/pN));
@@ -65,7 +65,7 @@ CommonMethods::CommonMethods(){
             corrent_x=0;
         }
         ++corrent_x;
-        long double res = dx[corrent_x];
+        long double res = dx[1];
         return res;
     }
     int CommonMethods::get_corrent_x_num() const{
@@ -108,15 +108,16 @@ CommonMethods::CommonMethods(){
         long double res;
         if (corrent_p == 0)
         {
-            res = log10(p[1]/p[0]);
+//            res = log10(p[1]/p[0]);
             corrent_p++;
         }else{
             ++corrent_p;
             if (corrent_p >= pN){
                 corrent_p=0;
             }
-            res = log10(p[corrent_p]/p[corrent_p-1]);
+  //          res = log10(p[corrent_p]/p[corrent_p-1]);
         }
+        res = log10(p[2]/p[1]);
         return res;
     }
 
