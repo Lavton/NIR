@@ -103,8 +103,13 @@ public:
 	        alpha[i]=(B[i]/(C[i]-alpha.at(i-1)*A[i]));
 	        beta[i]=((F[i]-beta.at(i-1)*A[i])/(C[i]-alpha.at(i-1)*A[i]));
 	    }
+/*	    std::cout<<"alpha = ";
+		CommonMethods::printVecLong(alpha);
+	    std::cout<<"beta = ";
+		CommonMethods::printVecLong(beta);
+*/
 	    std::vector<long double> x(N, 0);
-	    x[N-1]=(F[N-1] - A[N-1]*beta[N-2]) / (C[N-1] - A[N-1]*alpha[N-2]);
+	    x[N-1]= beta[N-1];//(F[N-1] - A[N-1]*beta[N-2]) / (C[N-1] - A[N-1]*alpha[N-2]);
 	    for (int i = N-1; i-- > 0;) {
 	        x[i]=beta[i]-alpha[i]*x[i+1];
 	    }

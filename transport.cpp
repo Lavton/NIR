@@ -46,13 +46,14 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 		C[0]=-1/dt - CommonMethods::Instance().u[0]/dx - D0* thisP*thisP/(dx*dx);
 		B[0]=D0*thisP/(dx*dx);
 		F[0]=-f0[i][0];
-		for (int j = 1; j < xN-2; ++j){
+		for (int j = 1; j < xN-1; ++j){
 			double prevU = CommonMethods::Instance().u[j-1];
 			double thisU = CommonMethods::Instance().u[j];
 			A[j] = thisU/dx + D0*thisP/(dx*dx);
 			C[j] = (thisU-prevU)/(3.0*dx*dlogP)+(4*(thisU-prevU))/(3*dx);
 			C[j] = C[j] - 1/dt - thisU/dx - D0*thisP*thisP/(dx*dx);
 			B[j]=D0*thisP/(dx*dx);
+		//	cout<<f0[i][j]<<" "<<f1[i-1][j]<<" "<<thisU<<" "<<prevU<<" "<<dlogP<<endl;
 			F[j]=-f0[i][j]/dt - (f1[i-1][j]/3.0)*(thisU-prevU)/dlogP;
 			if ((j == CommonMethods::Instance().get_p_inj_N()) && (i == CommonMethods::Instance().get_x_inj_N())){
 				F[j]+=CommonMethods::Instance().get_Q0()*pow(thisP,4);
@@ -69,7 +70,7 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 			F[xN-1]+=CommonMethods::Instance().get_Q0()*pow(thisP,4);
 		}
 //	cout<<"Here\n";
-		cout<<"A = ";
+/*		cout<<"A = ";
 		CommonMethods::printVecLong(A);
 		cout<<"C = ";
 		CommonMethods::printVecLong(C);
@@ -79,8 +80,10 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 		CommonMethods::printVecLong(F);
 
 //		CommonMethods::printMatrixVector(f0);
-		getchar();
-		f1.push_back(CommonMethods::matrixSolver(A,B,C,F));
+		getchar();*/
+		VecLong ftmp = CommonMethods::matrixSolver(A,B,C,F);
+//		CommonMethods::printVecLong(ftmp);
+		f1.push_back(ftmp);
 //		f1[i].reserve(f0[i].size());
 	}
 	return f1;
