@@ -49,12 +49,18 @@ void transp(){
 	for (int i=1; i<tN; i++){
 		cout<<"t № "<<i<<endl;
 		MatrixVector f1=first_kind_nonclear(f0);
+//			cout<<"we are here\n";
 
 		swap(f0,f1);
 	}
+//	swap(f1,f0);
+//			cout<<"we are here F\n"<<pN<<" "<<f0.size()<<endl;
 	for (int j = 0; j < pN; ++j){
-		if (j == CommonMethods::Instance().get_last_line_number()){
+		int ln = CommonMethods::Instance().get_last_line_number();
+		if (j == ln){
+//			cout<<"go \n";
 			answer.push_back(CommonMethods::Instance().convect(f0[j]));
+//			cout<<"arrave\n";
 			CommonMethods::Instance().inc_line_number_counter();
 		}
 	}

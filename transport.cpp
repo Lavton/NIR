@@ -37,7 +37,8 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 		f10.push_back(0);
 	}
 	f1.push_back(f10);
-	for (int i = 1; i < f0.size(); ++i){
+	int pN = f0.size();
+	for (int i = 1; i < pN; ++i){
 		CommonMethods::Instance().clear_corrent_u();
 		long double thisP = CommonMethods::Instance().p[i];
 		long double dlogP = CommonMethods::Instance().get_next_dlogp();
@@ -81,10 +82,16 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 
 //		CommonMethods::printMatrixVector(f0);
 		getchar();*/
+	//	cout<<pN-i-1<<" left\n";
 		VecLong ftmp = CommonMethods::matrixSolver(A,B,C,F);
 //		CommonMethods::printVecLong(ftmp);
+	//	cout<<"really\n";
 		f1.push_back(ftmp);
+	///	cout<<"don't lie\n";
 //		f1[i].reserve(f0[i].size());
 	}
+
+//	CommonMethods::printMatrixVector(f1);
+//	cout<<"Here\n";
 	return f1;
 }
