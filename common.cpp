@@ -25,15 +25,16 @@ CommonMethods::CommonMethods(){
     for (int i = 1; i < pN; ++i){
         p.push_back(pow(10, log10(p[0])+log10(p_max/p_min)*(i)/pN));
     }
+    std::cout<<log10(p[p_inj_N]);
 
 //u
     corrent_u=0;
-    u0=500;
+    u0=4;
     for (int i = 0; i < xN/2; ++i){
         u.push_back(u0);
     }
     for (int i = xN/2; i < xN; ++i){
-        u.push_back(u0/2);
+        u.push_back(u0/4);
     }
 
 //common

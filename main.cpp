@@ -60,9 +60,9 @@ void transp(){
 			CommonMethods::Instance().inc_line_number_counter();
 		}
 	}
-	for (int i = 0; i < answer[0].size(); ++i){
+	for (int i = 0; i < answer[0].size(); i+=10){
 		for (int j = 0; j < answer.size(); ++j){
-			outf<<log10(answer.at(j).at(i))<<" ";
+			outf<<answer.at(j).at(i)<<" ";
 		}
 		outf<<endl;
 	}

@@ -45,26 +45,26 @@ MatrixVector first_kind_nonclear(const MatrixVector &f0){
 		long double dx = CommonMethods::Instance().get_next_dx();
 		A[0]=0;
 		C[0]=-1/dt - CommonMethods::Instance().u[0]/dx - D0* thisP*thisP/(dx*dx);
-		B[0]=D0*thisP/(dx*dx);
+		B[0]=D0/(dx*dx);
 		F[0]=-f0[i][0];
 		for (int j = 1; j < xN-1; ++j){
 			double prevU = CommonMethods::Instance().u[j-1];
 			double thisU = CommonMethods::Instance().u[j];
-			A[j] = thisU/dx + D0*thisP/(dx*dx);
-			C[j] = (thisU-prevU)/(3.0*dx*dlogP)+(4*(thisU-prevU))/(3*dx);
-			C[j] = C[j] - 1/dt - thisU/dx - D0*thisP*thisP/(dx*dx);
-			B[j]=D0*thisP/(dx*dx);
+			A[j] = thisU/dx + D0/(dx*dx);
+			C[j] = (thisU-prevU)/(3.0*dx*dlogP)-(4*(thisU-prevU))/(3*dx);
+			C[j] = C[j] - 1/dt - thisU/dx - D0*thisP/(dx*dx);
+			B[j]=D0/(dx*dx);
 		//	cout<<f0[i][j]<<" "<<f1[i-1][j]<<" "<<thisU<<" "<<prevU<<" "<<dlogP<<endl;
 			F[j]=-f0[i][j]/dt - (f1[i-1][j]/3.0)*(thisU-prevU)/dlogP;
 			if ((j == CommonMethods::Instance().get_p_inj_N()) && (i == CommonMethods::Instance().get_x_inj_N())){
-				F[j]+=CommonMethods::Instance().get_Q0()*pow(thisP,4);
+				F[j]-=CommonMethods::Instance().get_Q0()*pow(thisP,4);
 			}
 		}
 		double prevU = CommonMethods::Instance().u[xN-2];
 		double thisU = CommonMethods::Instance().u[xN-1];
-		A[xN-1] = thisU/dx + D0*thisP/(dx*dx);
+		A[xN-1] = thisU/dx + D0/(dx*dx);
 		C[xN-1] = (thisU-prevU)/(3.0*dx*dlogP)+(4*(thisU-prevU))/(3*dx);
-		C[xN-1] = C[xN-1] - 1/dt - thisU/dx - D0*thisP*thisP/(dx*dx);
+		C[xN-1] = C[xN-1] - 1/dt - thisU/dx - D0*2/(dx*dx);
 		B[xN-1] = 0;
 		F[xN-1]=-f0[i][xN-1]/dt - (f1[i-1][xN-1]/3.0)*(thisU-prevU)/dlogP;
 		if ((xN-1 == CommonMethods::Instance().get_p_inj_N()) && (i == CommonMethods::Instance().get_x_inj_N())){
