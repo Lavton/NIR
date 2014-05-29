@@ -28,7 +28,7 @@ CommonMethods::CommonMethods(){
 
 //u
     corrent_u=0;
-    u0=50;
+    u0=500;
     for (int i = 0; i < xN/2; ++i){
         u.push_back(u0);
     }
@@ -166,6 +166,14 @@ CommonMethods::CommonMethods(){
         for (int i = 0; i < in.size(); ++i)
         {
             v[i] = (double) in[i];
+        }
+        return v;
+    }
+    std::vector<double> CommonMethods::convect(const MatrixVector& in, int j){
+        std::vector<double> v(in.size());
+        for (int i = 0; i < in[j].size(); ++i)
+        {
+            v[i] = (double) in[j][i];
         }
         return v;
     }

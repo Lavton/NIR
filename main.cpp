@@ -2,6 +2,7 @@
 #include <fstream>
 #include <algorithm>
 #include <stdio.h>
+#include <cmath>
 #include <vector>
 #include "common.h"
 #include "diffusion.h"
@@ -41,7 +42,7 @@ void transp(){
 	ifstream inf("f0.txt");
 	ofstream outf("Fres.txt");
 	std::vector< std::vector<double> > answer;
-	answer.push_back(CommonMethods::Instance().convect(CommonMethods::Instance().get_all_x()));
+	answer.push_back(CommonMethods::Instance().convect(CommonMethods::Instance().get_all_p()));
 	long double p=1;
 	MatrixVector f0=init();
 	int pN=f0.size();
@@ -49,24 +50,19 @@ void transp(){
 	for (int i=1; i<tN; i++){
 		cout<<"t № "<<i<<endl;
 		MatrixVector f1=first_kind_nonclear(f0);
-//			cout<<"we are here\n";
 
 		swap(f0,f1);
 	}
-//	swap(f1,f0);
-//			cout<<"we are here F\n"<<pN<<" "<<f0.size()<<endl;
 	for (int j = 0; j < pN; ++j){
 		int ln = CommonMethods::Instance().get_last_line_number();
 		if (j == ln){
-//			cout<<"go \n";
-			answer.push_back(CommonMethods::Instance().convect(f0[j]));
-//			cout<<"arrave\n";
+			answer.push_back(CommonMethods::Instance().convect(f0,j));
 			CommonMethods::Instance().inc_line_number_counter();
 		}
 	}
 	for (int i = 0; i < answer[0].size(); ++i){
 		for (int j = 0; j < answer.size(); ++j){
-			outf<<answer.at(j).at(i)<<" ";
+			outf<<log10(answer.at(j).at(i))<<" ";
 		}
 		outf<<endl;
 	}
