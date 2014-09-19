@@ -40,7 +40,7 @@ std::vector<int> line_numbers;
 
 void commonMethods(){
 //t
-    tN=300;
+    tN=30;
     dt=0.005;
 
 //x
@@ -111,6 +111,7 @@ MatrixVector first_kind_clear(const MatrixVector &f0){
 			if ((j == p_inj_N) && (i == x_inj_N)){
 				corrent += Q0 * pow(thisP,4);
 			}
+			corrent = corrent * dt + f0[i][j];
 			ftmp.push_back(corrent);
 		}
 		ftmp.push_back(0);
