@@ -113,17 +113,19 @@ MatrixVector first_kind_clear(const MatrixVector &f0){
 			}
 			ftmp.push_back(corrent);
 		}
+		ftmp.push_back(0);
 		f1.push_back(ftmp);
 	}
+	return f1;
 }
 MatrixVector init(){
 	MatrixVector v;
 	for (int i = 0; i < pN; ++i)
 	{
 
-		VecLong v0(xN);
+		VecLong v0;
 		for (int j = 0; j < xN; ++j){
-			v0[j]=0;
+			v0.push_back(0);
 		}
 		v.push_back(v0);
 
@@ -138,15 +140,14 @@ void transp(){
 	commonMethods();
 	vector< vector<double> > answer;
 	answer.push_back(p);
-	//long double p=1;
 	MatrixVector f0=init();
 	int pN=f0.size();
 	for (int i=1; i<tN; i++){
 		cout<<"t № "<<i<<endl;
 		MatrixVector f1=first_kind_clear(f0);
-
 		swap(f0,f1);
 	}
+
 	for (int j = 0; j < pN; ++j){
 		if ((j % 50 == 0)){
 			answer.push_back(f0[j]);
