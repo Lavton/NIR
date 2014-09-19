@@ -22,7 +22,7 @@ void diffus(){
 
 	for (int i=1; i<tN; i++){
 		cout<<"t= "<<i*CommonMethods::Instance().get_next_dt()<<endl;
-		std::vector<long double> f1 = first_kind(f0, p);
+		std::vector<long double> f1 = first_kind_nonclear(f0, p);
 		if(i==CommonMethods::Instance().get_last_line_number()){
 			answer.push_back(CommonMethods::Instance().convect(f1));
 			CommonMethods::Instance().inc_line_number_counter();
@@ -68,7 +68,7 @@ void transp(){
 	}
 }
 int main(){
-//	diffus();
+	//diffus();
 	transp();
 	return 0;
 }

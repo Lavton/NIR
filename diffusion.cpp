@@ -15,8 +15,6 @@ VecLong first_kind(const VecLong &f0, long double p){
 		long double dt = CommonMethods::Instance().get_next_dt();
 
 		long double df=f0[i-1]+f0[i+1]-2*f0[i];
-//		cerr<<dx<<" "<<df<<endl;
-
 		df *=p/(dx*dx);
 		f1.push_back(df*dt+f0[i]);		
 	}
