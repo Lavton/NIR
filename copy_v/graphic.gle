@@ -1,0 +1,6 @@
+begin graph 
+size 20 20 
+data fp4.dat
+d1 line color #ffcc00
+
+end graph
