@@ -1,8 +1,8 @@
 #include "progon.h"
 
-void matrix_solver(double *A, double *C, double *B, int N, double *F, double *x) {
-	double *alpha = new double[N + 2];
-	double *beta = new double[N + 2];
+void matrix_solver(long double *A, long double *C, long double *B, int N, long double *F, long double *x) {
+	long double *alpha = new long double[N + 2];
+	long double *beta = new long double[N + 2];
     alpha[1] =-(B[1] / C[1]);
     beta[1] = (F[1] / C[1]);
     for (int i = 2; i <= N; ++i) {
