@@ -15,4 +15,6 @@ void matrix_solver(double *A, double *C, double *B, int N, double *F, double *x)
     for (int i = 1; i <= N; i++) {
     	x[N + 1 - i] = alpha[N-i+1] * x[N-i+2] + beta[N-i+1];
     }
+    delete[] alpha;
+    delete[] beta;
 }
