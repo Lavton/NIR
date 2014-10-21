@@ -3,26 +3,25 @@
 #include "coef.h"
 #include "progon.h"
 using namespace std;
-void solver(long double a, long double ymin, long double* x, long double dy, 
-	long double dt, int Nx, int Np, long double** gn, long double** g) {
+void solver(double a, double ymin, double* x, double dy, 
+	double dt, int Nx, int Np, double** gn, double** g) {
 
-	long double *A = new long double[Nx];
-	long double *C = new long double[Nx + 1];
-	long double *B = new long double[Nx];
-	long double *F = new long double[Nx + 1];
-	long double *Xg = new long double[Nx + 1];
+	double *A = new double[Nx];
+	double *C = new double[Nx + 1];
+	double *B = new double[Nx];
+	double *F = new double[Nx + 1];
+	double *Xg = new double[Nx + 1];
 	for (int k = 1; k < Np; ++k) {
-//		cout<<k<<endl;
-		long double y = ymin + k * dy;
-		long double gkp = gn[1][k];
-		long double gkm = (k == 1) ? 0.0 : gn[1][k - 1];
-		long double dx = (x[2] + a) / 2.0;
-		long double dxp = x[2] - x[1];
-		long double dxm = x[1] + a;
-		long double xp = (x[2] + x[1]) / 2.0;
-		long double xm = (x[1] - a) / 2.0;
-		long double gip = (gn[2][k] + gn[1][k]) / 2.0;
-		long double gim = gn[1][k] / 2.0;
+		double y = ymin + k * dy;
+		double gkp = gn[1][k];
+		double gkm = (k == 1) ? 0.0 : gn[1][k - 1];
+		double dx = (x[2] + a) / 2.0;
+		double dxp = x[2] - x[1];
+		double dxm = x[1] + a;
+		double xp = (x[2] + x[1]) / 2.0;
+		double xm = (x[1] - a) / 2.0;
+		double gip = (gn[2][k] + gn[1][k]) / 2.0;
+		double gim = gn[1][k] / 2.0;
 
 		C[1] = 1.0 + (dt / (2.0 * dx)) * (kappa(xp, y) / dxp + kappa(xm,y) / dxm);
 		B[1] = -(dt / (2.0 * dx)) * (kappa(xp, y) / dxp);
@@ -65,43 +64,12 @@ void solver(long double a, long double ymin, long double* x, long double dy,
 			(gn[Nx][k] - gn[Nx-1][k]) / dxm) - (dt / dx) *
     		(u(xp) * gip - u(xm) * gim) + (dt / 3.0) * ((u(xp) -
     		u(xm)) / dx) * ((gkp - gkm) / dy) + dt * Qinj(x[Nx],dx,y,dy);
-/*    	for (int i = 0; i < Nx; i++) {
-    		cout<<scientific<<A[i]<<" ";
-    	}
-    	cout<<endl;
-    	cout<<endl;
-    	for (int i = 0; i <= Nx; i++) {
-    		cout<<scientific<<C[i]<<" ";
-    	}
-    	cout<<endl;
-    	cout<<endl;
-    	for (int i = 0; i < Nx; i++) {
-    		cout<<scientific<<B[i]<<" ";
-    	}
-    	cout<<endl;
-    	cout<<endl;
-    	for (int i = 0; i <= Nx; i++) {
-    		cout<<scientific<<F[i]<<" ";
-    	}
-    	cout<<endl;
-    	cout<<endl;
-*/
+
     	matrix_solver(A, C, B, Nx - 1, F, Xg);
     	for (int l = 0; l < Nx + 1; ++l) {
     		g[l][k] = Xg[l];
     	}
-  //  	for (int i = 0; i <= Nx; i++) {
-    //		cout<<scientific<<Xg[i]<<" ";
-    //	}
-    //	cout<<endl;
-    //	cout<<endl<<endl;
 	}
-/*	for (int k = 0; k <= Nx; ++k) {
-		for (int j = 0; j < Np; j++) {
-			cout<<scientific<<g[k][j]<<" ";
-		}
-		cout<<endl<<endl;
-	}*/
 	delete[] A;
 	delete[] C;
 	delete[] B;

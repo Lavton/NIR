@@ -29,3 +29,4 @@ octave-core
 *.o
 *.eps
 *.pdf
+*.dat

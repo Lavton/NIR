@@ -1,7 +1,7 @@
 #ifndef _COEF_H_
 #define _COEF_H_
-long double u(long double x);
-long double kappa(long double x, long double y);
-long double Qinj(long double x, long double y, long double dx, long double dy);
+double u(double x);
+double kappa(double x, double y);
+double Qinj(double x, double y, double dx, double dy);
 
 #endif

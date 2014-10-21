@@ -3,6 +3,8 @@ size 20 20
 
 yaxis log min 0.001 max 0.1  
 data fp4.dat
-d2 line color #ffcc00
-
+d2 line color #ff0000
+d3 line color #000000
+d4 line color #ffcc00
+d5 line color #00ff00
 end graph
