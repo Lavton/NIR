@@ -28,8 +28,8 @@ int main() {
 	double dy = log(Pmax / Pmin) / Np;
 
 	//создание сетки по х
-	double h1=0.5 * Nx / log(1.0 + a);
-	double h2=0.5 * Nx / log(1.0 + b);
+	double h1 = 0.5 * Nx / log(1.0 + a);
+	double h2 = 0.5 * Nx / log(1.0 + b);
 	for (int i = 1; i <= Nx / 2; i++) {
 		x[i] = 1.0 - exp(-(1.0 * i - 0.5 * Nx) / h1);
 	}
@@ -41,7 +41,7 @@ int main() {
 	for (int i = 1; i <= Nt; i++) {
 		cout << i << endl;
 		solver(a, ymin, x, dy, dt, Nx, Np, gn, g);
-		double ** tmp = gn;
+		double **tmp = gn;
 		gn = g;
 		g = gn;
 
@@ -55,17 +55,20 @@ int main() {
 	outf1.close();
 
 	ofstream outf2("Nx.dat");
-	outf2 <<Nx<<endl;
+	outf2<<Nx<<endl;
 	outf2.close();
 
 	ofstream outf3("Np.dat");
 	outf3<<Np<<endl;
 	outf3.close();
 
-	ofstream outf4("gfull.dat");
-	for (int i = 0; i < Nx + 1; i++) {
-		for (int k = 1; k < Np; k++) {
-			outf4<<g[i][k]<<" ";
+	ofstream outf4("fp4full.dat");
+	for (int i = 0; i < Np; i++) {
+		outf4<<i<<" ";
+		double y = ymin + i * dy;
+
+		for (int k = 1; k <= Nx; k++) {
+			outf4<<g[k][i]<<" ";
 		}
 		outf4<<endl;
 	}
