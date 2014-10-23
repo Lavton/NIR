@@ -1,4 +1,5 @@
 #include "sheme.h"
+#include <omp.h>
 #include <iostream>
 #include "coef.h"
 #include "progon.h"
@@ -11,6 +12,8 @@ void solver(double a, double ymin, double* x, double dy,
 	double *B = new double[Nx];
 	double *F = new double[Nx + 1];
 	double *Xg = new double[Nx + 1];
+	omp_set_num_threads(4);
+	#pragma omp parallel for
 	for (int k = 1; k < Np; ++k) {
 		double y = ymin + k * dy;
 		double gkp = gn[1][k];

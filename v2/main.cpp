@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 	int Nx = 200;
 	int Np = 100;
-	int Nt = 10000;
+	int Nt = 1000;
 	double a=10000.0;
 	double b=10000.0;
 	double Pmin=0.01;
@@ -64,11 +64,11 @@ int main() {
 
 	ofstream outf4("fp4full.dat");
 	for (int i = 0; i < Np; i++) {
-		outf4<<i<<" ";
 		double y = ymin + i * dy;
+		outf4<<exp(y)/exp(ymin)<<" ";
 
 		for (int k = 1; k <= Nx; k++) {
-			outf4<<g[k][i]<<" ";
+			outf4<<g[k][i] * exp(y)<<" ";
 		}
 		outf4<<endl;
 	}
