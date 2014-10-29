@@ -3,16 +3,17 @@
 #include <iostream>
 #include "coef.h"
 #include "progon.h"
+#include "data_storage.h"
 using namespace std;
 void solver(double a, double ymin, double* x, double dy, 
 	double dt, int Nx, int Np, double** gn, double** g) {
 
-	double *A = new double[Nx];
-	double *C = new double[Nx + 1];
-	double *B = new double[Nx];
-	double *F = new double[Nx + 1];
-	double *Xg = new double[Nx + 1];
-	omp_set_num_threads(4);
+	double *A = DataStorage::Instance(Nx).A;
+	double *C = DataStorage::Instance(Nx).C;
+	double *B = DataStorage::Instance(Nx).B;
+	double *F = DataStorage::Instance(Nx).F;
+	double *Xg = DataStorage::Instance(Nx).Xg;
+	omp_set_num_threads(2);
 	#pragma omp parallel for
 	for (int k = 1; k < Np; ++k) {
 		double y = ymin + k * dy;
@@ -73,9 +74,4 @@ void solver(double a, double ymin, double* x, double dy,
     		g[l][k] = Xg[l];
     	}
 	}
-	delete[] A;
-	delete[] C;
-	delete[] B;
-	delete[] F;
-	delete[] Xg;
 }

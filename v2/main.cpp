@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 	int Nx = 200;
 	int Np = 100;
-	int Nt = 1000;
+	int Nt = 100000;
 	double a=10000.0;
 	double b=10000.0;
 	double Pmin=0.01;
