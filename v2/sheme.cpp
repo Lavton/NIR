@@ -1,5 +1,5 @@
 #include "sheme.h"
-#include <omp.h>
+//#include <omp.h>
 #include <iostream>
 #include "coef.h"
 #include "progon.h"
@@ -13,8 +13,8 @@ void solver(double a, double ymin, double* x, double dy,
 	double *B = DataStorage::Instance(Nx).B;
 	double *F = DataStorage::Instance(Nx).F;
 	double *Xg = DataStorage::Instance(Nx).Xg;
-	omp_set_num_threads(2);
-	#pragma omp parallel for
+//	omp_set_num_threads(2);
+//	#pragma omp parallel for
 	for (int k = 1; k < Np; ++k) {
 		double y = ymin + k * dy;
 		double gkp = gn[1][k];

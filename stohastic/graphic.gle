@@ -1,0 +1,6 @@
+begin graph 
+size 20 20
+
+data ito.out
+d1 line color #ff0000
+end graph
