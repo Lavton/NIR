@@ -7,11 +7,11 @@ double pi = 3.14159265358979323846;
 
 
 
-double u(double x) {
+double V(double x) {
 	double coef = 1.0/0.25;
 
 	// (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.4
-	return (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.0/4
+	return (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.0/4;
 /*	double u1, u2;
 	u1=1.0;
 	u2=0.25*u1;
@@ -21,6 +21,12 @@ double u(double x) {
 		return u2;
 	}
 */
+}
+
+double dVonDx(double x) {
+	double coef = 1.0/0.25;
+
+	return -0.238732*coef/(coef*coef*x*x + 1);
 }
 
 double kappa(double x, double y) {

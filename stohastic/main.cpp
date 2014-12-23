@@ -3,9 +3,11 @@
 #include <math.h>
 #include <ctime>
 #include "coef.h"
+
 double a(double x, double y) {
-	return u(x);
+	return V(x);
 }
+
 double b(double x, double y) {
 	return sqrt(2*kappa(x,y));
 }
@@ -24,13 +26,16 @@ int main(int argc, char const *argv[]) {
 
 	double x = 1;
 	double t = 0; 
-	double * hist = new double[num];
+	double u = 0;
+	
 	fprintf(out, "%g\t%g\n", t, x);
 	for (int k = 1; k <= num; k++) {
+		double x = 1;
 		for (int j = 0; j < lag; j++, t += dt) {
 			x += a(x, t)*dt + b(x,t)*rnd_g()*sqrt_dt;
+			u += (-1.0/3)*dVonDx(x)*dt;
 		}
-		hist[k] = x;
+
 	//	fprintf(out, "%g\n", x);
 		fprintf(out, "%g\t%g\n", t, x);
 		fflush(out);
