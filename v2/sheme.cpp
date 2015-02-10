@@ -1,21 +1,25 @@
 #include "sheme.h"
-//#include <omp.h>
+#include <thread>
 #include <iostream>
 #include "coef.h"
 #include "progon.h"
 #include "data_storage.h"
 using namespace std;
-void solver(double a, double ymin, double* x, double dy, 
+
+void solve_part(int i, int tn, double a, double ymin, double* x, double dy, 
 	double dt, int Nx, int Np, double** gn, double** g) {
 
-	double *A = DataStorage::Instance(Nx).A;
-	double *C = DataStorage::Instance(Nx).C;
-	double *B = DataStorage::Instance(Nx).B;
-	double *F = DataStorage::Instance(Nx).F;
-	double *Xg = DataStorage::Instance(Nx).Xg;
-//	omp_set_num_threads(2);
-//	#pragma omp parallel for
-	for (int k = 1; k < Np; ++k) {
+	int begin = i*Np/tn;
+	int end = (i+1)*Np/tn;
+	double *A = DataStorage::Instance(Nx,tn).A[i];
+	double *C = DataStorage::Instance(Nx,tn).C[i];
+	double *B = DataStorage::Instance(Nx,tn).B[i];
+	double *F = DataStorage::Instance(Nx,tn).F[i];
+	double *Xg = DataStorage::Instance(Nx,tn).Xg[i];
+	double *alpha = DataStorage::Instance(Nx,tn).alpha[i];
+	double *beta = DataStorage::Instance(Nx,tn).beta[i];
+
+	for (int k = begin; k < end; ++k) {
 		double y = ymin + k * dy;
 		double gkp = gn[1][k];
 		double gkm = (k == 1) ? 0.0 : gn[1][k - 1];
@@ -69,9 +73,22 @@ void solver(double a, double ymin, double* x, double dy,
     		(u(xp) * gip - u(xm) * gim) + (dt / 3.0) * ((u(xp) -
     		u(xm)) / dx) * ((gkp - gkm) / dy) + dt * Qinj(x[Nx],dx,y,dy);
 
-    	matrix_solver(A, C, B, Nx - 1, F, Xg);
-    	for (int l = 0; l < Nx + 1; ++l) {
-    		g[l][k] = Xg[l];
-    	}
+    matrix_solver(A, C, B, Nx - 1, F, Xg, alpha, beta);
+    for (int l = 0; l < Nx + 1; ++l) {
+    	g[l][k] = Xg[l];
+    }
+	}		
+}
+void solver(double a, double ymin, double* x, double dy, 
+	double dt, int Nx, int Np, double** gn, double** g) {
+	int tn = 2;
+	std::thread** tr = new std::thread* [2];
+	for (int i = 0; i < tn; i++) {
+		tr[i] = new std::thread(solve_part,i, tn, a, ymin, x, dy, dt, Nx, Np, gn, g);
+		// solve_part(i, tn, a, ymin, x, dy, dt, Nx, Np, gn, g);
 	}
+  for (int i=0; i < tn; i++) {
+    tr[i]->join();
+  }
+
 }

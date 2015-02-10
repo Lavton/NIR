@@ -1,8 +1,6 @@
 #include "progon.h"
 #include "data_storage.h"
-void matrix_solver(double *A, double *C, double *B, int N, double *F, double *x) {
-	double *alpha = DataStorage::Instance(N+1).alpha;
-	double *beta = DataStorage::Instance(N+1).beta;
+void matrix_solver(double *A, double *C, double *B, int N, double *F, double *x, double *alpha, double *beta) {
     alpha[1] =-(B[1] / C[1]);
     beta[1] = (F[1] / C[1]);
     for (int i = 2; i <= N; ++i) {
