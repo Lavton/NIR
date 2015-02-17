@@ -81,10 +81,10 @@ void solve_part(int i, int tn, double a, double ymin, double* x, double dy,
 }
 void solver(double a, double ymin, double* x, double dy, 
 	double dt, int Nx, int Np, double** gn, double** g) {
-	int tn = 2;
-	std::thread** tr = new std::thread* [2];
+	int tn = 4;
+	std::thread** tr = new std::thread* [4];
 	for (int i = 0; i < tn; i++) {
-		tr[i] = new std::thread(solve_part,i, tn, a, ymin, x, dy, dt, Nx, Np, gn, g);
+		tr[i] = new std::thread(solve_part, i, tn, a, ymin, x, dy, dt, Nx, Np, gn, g);
 		// solve_part(i, tn, a, ymin, x, dy, dt, Nx, Np, gn, g);
 	}
   for (int i=0; i < tn; i++) {
