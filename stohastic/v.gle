@@ -1,0 +1,6 @@
+begin graph 
+size 20 20 
+data V.out
+d1 line color #ffcc00
+end graph
+
