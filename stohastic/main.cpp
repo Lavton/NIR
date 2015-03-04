@@ -21,7 +21,8 @@ int main(int argc, char const *argv[]) {
 
 	}
 	return 0;
-*/	double step = 0.1;
+*/	
+	double step = 0.1;
 	const int num = 1000;
 	int lag = 20000;
 	FILE *out = fopen("ito.out", "w");
@@ -29,14 +30,14 @@ int main(int argc, char const *argv[]) {
 	double dt = 0.01;
 	double sqrt_dt = sqrt(dt);
 
-	double x = 1;
+	double x = 0;
 	
 	
 	// fprintf(out, "%g\t%g\n", x);
 	for (int k = 1; k <= num; k++) {
 		double t = 0;
 		printf("particle № %d\n", k);
-		double x = 2;
+		double x = 0;
 		double u = 0;
 		for (int j = 0; j < lag; j++, t += dt) {
 			x += a(x, t)*dt + b(x,t)*rnd_g()*sqrt_dt;

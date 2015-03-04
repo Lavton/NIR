@@ -7,7 +7,7 @@ x = [float(date[i][0]) for i in xrange(len(date))]
 # y = [float(date[i][1]) for i in xrange(len(date))]
 # print y
 # print np.logspace(min(y), max(y), 40)
-h = pl.hist(x) #, bins=np.logspace(min(y), max(y), 40)
+h = pl.hist(x, bins=29) #, bins=np.logspace(min(y), max(y), 40)
 print "h=", h
 pl.gca() #.set_xscale("log")
 pl.show()
