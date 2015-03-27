@@ -8,7 +8,7 @@ double pi = 3.14159265358979323846;
 
 
 double V(double x) {
-	double coef = 8.0;
+	double coef = 0.2;
 
 	// (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.4
 	return (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.0/4;
@@ -26,13 +26,13 @@ double V(double x) {
 double dVonDx(double x) {
 	// double coef = 8.0;
 	// return -0.238732*coef/(coef*coef*x*x + 1);
-	double dx = 0.001;
+	double dx = 0.000001;
 	return (V(x+dx) - V(x))/dx;
 }
 
 double kappa(double x, double y) {
-	double kappa0 = 5;
-	return kappa0; //* exp(y);
+	double kappa0 = 20;
+	return kappa0; // * exp(y);
 }
 
 double Qinj(double x, double dx, double y, double dy) {

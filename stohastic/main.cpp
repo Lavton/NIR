@@ -15,15 +15,15 @@ double b(double x, double y) {
 int main(int argc, char const *argv[]) {
 
 	set_g_rnd_seed(time(0));
-/*	FILE *out = fopen("V.out", "w");
-	for (double i = 0.0; i <= 5.0; i+=0.1) {
-		fprintf(out, "%g\t%g\n", i, V(i));	
+	/*FILE *out = fopen("V.out", "w");
+	for (double i = 0.0; i <= 5000; i+=0.1) {
+		fprintf(out, "%g\t%g\n", i, rnd_g());	
 
 	}
 	return 0;
-*/	
+	*/
 	double step = 0.1;
-	const int num = 1000;
+	const int num = 5000;
 	int lag = 20000;
 	FILE *out = fopen("ito.out", "w");
 
@@ -44,7 +44,7 @@ int main(int argc, char const *argv[]) {
 			u += (-1.0/3)*dVonDx(x)*dt;
 		}
 
-		fprintf(out, "%g\n", u);
+		fprintf(out, "%g %g\n", x, u);
 		fflush(out);
 	}
 	fclose(out);
