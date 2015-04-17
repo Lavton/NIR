@@ -22,15 +22,17 @@ int main(int argc, char const *argv[]) {
 	}
 	return 0;
 	*/
-	double step = 0.1;
-	const int num = 5000;
+	double step = 0.25;
+	const int num = 50000;
 	int lag = 20000;
 	FILE *out = fopen("ito.out", "w");
 
-	double dt = 0.01;
+	double dt = 0.1;
 	double sqrt_dt = sqrt(dt);
 
 	double x = 0;
+	double* xs = new double[num];
+	double* us = new double[num];
 	
 	
 	// fprintf(out, "%g\t%g\n", x);
@@ -43,10 +45,13 @@ int main(int argc, char const *argv[]) {
 			x += a(x, t)*dt + b(x,t)*rnd_g()*sqrt_dt;
 			u += (-1.0/3)*dVonDx(x)*dt;
 		}
-
+		xs[k-1] = x;
+		us[k-1] = u;
 		fprintf(out, "%g %g\n", x, u);
 		fflush(out);
 	}
 	fclose(out);
+
+
 	return 0;
 }

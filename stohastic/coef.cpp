@@ -8,10 +8,10 @@ double pi = 3.14159265358979323846;
 
 
 double V(double x) {
-	double coef = 0.2;
-
+	double coef = 0.25;
+	return 1/4+((3/4)*(1-tanh(x/coef))/2);
 	// (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.4
-	return (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.0/4;
+	// return (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.0/4;
 /*	double u1, u2;
 	u1=1.0;
 	u2=0.25*u1;
@@ -31,7 +31,7 @@ double dVonDx(double x) {
 }
 
 double kappa(double x, double y) {
-	double kappa0 = 20;
+	double kappa0 = 5;
 	return kappa0; // * exp(y);
 }
 
