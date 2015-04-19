@@ -4,12 +4,12 @@
 #include <ctime>
 #include "coef.h"
 
-double a(double x, double y) {
+double a(double x, double u) {
 	return V(x);
 }
 
-double b(double x, double y) {
-	return sqrt(2*kappa(x,y));
+double b(double x, double u) {
+	return sqrt(2*kappa(x,u));
 }
 
 int main(int argc, char const *argv[]) {
@@ -22,9 +22,9 @@ int main(int argc, char const *argv[]) {
 	}
 	return 0;
 	*/
-	double step = 0.25;
-	const int num = 50000;
-	int lag = 20000;
+	
+	const int num = 10000;
+	int lag = 50000;
 	FILE *out = fopen("ito.out", "w");
 
 	double dt = 0.1;
@@ -42,8 +42,8 @@ int main(int argc, char const *argv[]) {
 		double x = 0;
 		double u = 0;
 		for (int j = 0; j < lag; j++, t += dt) {
-			x += a(x, t)*dt + b(x,t)*rnd_g()*sqrt_dt;
-			u += (-1.0/3)*dVonDx(x)*dt;
+			x += a(x, u)*dt + b(x,u)*rnd_g()*sqrt_dt;
+			u += (-1.0/3.)*dVonDx(x)*dt;
 		}
 		xs[k-1] = x;
 		us[k-1] = u;

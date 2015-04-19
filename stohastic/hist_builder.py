@@ -1,14 +1,22 @@
 #!/usr/bin/python
 import numpy as np
 import pylab as pl
-from math import log, exp
+from math import *
 date = [line.strip().split() for line in open("ito.out")]
 x = [float(date[i][0]) for i in xrange(len(date))]
 u = [float(date[i][1]) for i in xrange(len(date))]
 
-his = np.histogram(u, bins=50, range=(0,2))
+his = np.histogram(u, bins=100, range=(-0.5, 10))
 for i in xrange(len(his[0])):
- 	his[0][i] *= exp(his[1][i])
+	pass
+	if 0<his[1][i+1]<6:
+		his[1][i+1] = np.log10(exp(his[1][i+1]))
+		his[0][i] = np.log10(his[0][i])
+ 	#his[0][i]  *= exp(his[1][i])
+ 	# if his[0][i] != 0:
+	 # 	his[0][i] = np.log10(his[0][i])
+	 # 	if his[0][i] > 2000:
+	 # 		his[0][i] = 2000
 
 pl.clf()
 pl.plot(his[1][1:], his[0])
