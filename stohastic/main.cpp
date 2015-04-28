@@ -15,9 +15,9 @@ double b(double x, double u) {
 
 
 void solve_part(int tn, FILE* out) {
-	const int num = 10000;
+	const int num = 50000;
 	int lag = 50000;
-
+	static int part_num = 0;
 	double dt = 0.1;
 	double sqrt_dt = sqrt(dt);
 
@@ -25,7 +25,10 @@ void solve_part(int tn, FILE* out) {
 
 	for (int k = 1; k <= num/tn; k++) {
 		double t = 0;
-		printf("particle № %d\n", k);
+		++part_num;
+		if (!(part_num % 100)){
+			printf("particle № %d\n", ++part_num);
+		}
 		double x = 0;
 		double u = 0;
 		for (int j = 0; j < lag; j++, t += dt) {

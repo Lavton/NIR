@@ -9,14 +9,16 @@ u = [float(date[i][1]) for i in xrange(len(date))]
 his = np.histogram(u, bins=100, range=(-0.5, 10))
 for i in xrange(len(his[0])):
 	pass
-	if 0<his[1][i+1]<6:
-		his[1][i+1] = np.log10(exp(his[1][i+1]))
-		his[0][i] = np.log10(his[0][i])
- 	#his[0][i]  *= exp(his[1][i])
- 	# if his[0][i] != 0:
-	 # 	his[0][i] = np.log10(his[0][i])
-	 # 	if his[0][i] > 2000:
-	 # 		his[0][i] = 2000
+	# if 0<his[1][i+1]<6:
+		# pass
+	his[0][i]  *= exp(his[1][i])
+	# if his[0][i] != 0:
+		# print his[0][i], np.log10(his[0][i])
+	 	# his[0][i] = np.log10(his[0][i])
+	his[1][i] = np.log10(exp(his[1][i]))
+	# his[0][i] = np.log10(his[0][i])
+	if his[0][i] > 7000:
+		his[0][i] = 7000
 
 pl.clf()
 pl.plot(his[1][1:], his[0])
