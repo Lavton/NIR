@@ -51,7 +51,7 @@ double dVonDx(double x) {
 
 double kappa(double x, double u) {
 	double kappa0 = 5;
-	return kappa0; // * exp(y);
+	return kappa0 * exp(u);
 }
 
 double Qinj(double x, double dx, double y, double dy) {
