@@ -15,8 +15,8 @@ double b(double x, double u) {
 
 
 void solve_part(int tn, FILE* out) {
-	const int num = 50000;
-	int lag = 50000;
+	const int num = 5000;
+	int lag = 100000;
 	static int part_num = 0;
 	double dt = 0.1;
 	double sqrt_dt = sqrt(dt);
@@ -33,7 +33,8 @@ void solve_part(int tn, FILE* out) {
 		double u = 0;
 		for (int j = 0; j < lag; j++, t += dt) {
 			x += a(x, u)*dt + b(x,u)*rnd_g()*sqrt_dt;
-			u += (-1.0/3.)*dVonDx(x)*dt;
+			u += ((-1.0/3.)*dVonDx(x)-0.00004*sqrt(1+exp(2*u)))*dt;
+			// printf("%f %f\n", exp(2*u), sqrt(1+exp(2*u)));
 		}
 		fprintf(out, "%g %g\n", x, u);
 		fflush(out);

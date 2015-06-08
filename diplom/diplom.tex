@@ -1,0 +1,56 @@
+
+\documentclass[a4paper,11pt]{article} %размер бумаги устанавливаем А4, шрифт 12пунктов
+\usepackage[T2A]{fontenc}
+%\usepackage[utf8]{inputenc} 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\inputencoding{utf8}
+\usepackage[english,russian]{babel}%используем русский и английский языки с переносами
+\usepackage{amssymb,amsfonts,amsmath,mathtext,cite,enumerate,float}%подключаем нужные пакеты расширений
+\usepackage[pdftex]{graphicx} %хотим вставлять в диплом рисунки?
+\usepackage{color}
+\usepackage[ section ]{ placeins}
+\usepackage[pdftex]{lscape}
+\usepackage{lscape}
+%\graphicspath{{noiseimages/}}%путь к рисункам
+\usepackage{listings}
+\lstset{language=Fortran}
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother
+\setcounter{tocdepth}{3}
+\usepackage{geometry} % Меняем поля страницы
+\makeatletter
+\@addtoreset{equation}{subsection}
+\makeatother
+
+\newcommand{\frp}[2]{\frac{\partial #1}{\partial #2}}
+
+\renewcommand*{\thesection}{\arabic{section}}
+
+\geometry{left=2cm}% левое поле
+\geometry{right=1.5cm}% правое поле
+\geometry{top=1cm}% верхнее поле
+\geometry{bottom=2cm}% нижнее поле
+
+
+
+\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+
+\renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumii}{.\arabic{enumii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theequation}{\arabic{equation}}
+\begin{document}
+
+\tableofcontents
+\newpage
+\section{Введение}
+\subsection{Актуальность}
+
+
+\end{document}

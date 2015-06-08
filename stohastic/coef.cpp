@@ -12,11 +12,11 @@ double V(double x) {
 
     double u1, u2;
 	u1=1.0;
-	u2=0.25*u1;
+	u2= 0.0 ; // 0.25*u1;
 return (u1+u2)/2.-(u1-u2)/2.*tanh(x/coef);
 
 
-	return (1/4)+((3/4)*(1-tanh(x/coef))/2);
+	// return (1/4)+((3/4)*(1-tanh(x/coef))/2);
 	// (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.4
 	// return (-atan(x*coef) + pi/2) / pi * (3.0/4) + 1.0/4;
 /*	double u1, u2;
@@ -35,7 +35,7 @@ double dVonDx(double x) {
 
     double u1, u2;
 	u1=1.0;
-	u2=0.25*u1;
+	u2= 0.0;//0.25*u1;
 	double dx = 0.001;
 	return -(u1-u2)/2./coef/cosh(x/coef)/cosh(x/coef) ;
 
