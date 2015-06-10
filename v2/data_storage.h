@@ -10,9 +10,9 @@ public:
 	double **B;
 	double **F;
 	double **Xg;
-	static DataStorage& Instance(int Nx, int tn){
-	    static DataStorage theSingleInstance(Nx, tn);
-	    return theSingleInstance;
+	static DataStorage& Instance(int Nx, int tn) {
+		static DataStorage theSingleInstance(Nx, tn);
+		return theSingleInstance;
 	}
 
 private:
@@ -25,7 +25,7 @@ private:
 		F = new double*[tn];
 		Xg = new double*[tn];
 
-		for (int i = 0; i < tn; i++){
+		for (int i = 0; i < tn; i++) {
 			alpha[i] = new double[Nx + 1];
 			beta[i] = new double[Nx + 1];
 			A[i] = new double[Nx];
