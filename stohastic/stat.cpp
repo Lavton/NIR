@@ -14,16 +14,16 @@ void set_g_rnd_seed(unsigned int seed) {
 	g_rnd_seed = seed ? seed : 1;
 }
 
-inline double sqr(double v) {
+inline long double sqr(long double v) {
 	return v * v;
 }
 
-double sigma(double *x, int n) {
+long double sigma(long double *x, int n) {
 	if (n < 2) {
 		return 0;
 	}
-	double av = 0;
-	double di = 0;
+	long double av = 0;
+	long double di = 0;
 	for (int i = 0; i < n; i++) {
 		av += x[i];
 		di += x[i] * x[i];
@@ -36,8 +36,8 @@ double sigma(double *x, int n) {
 	return di > 0 ? sqrt(di) : 0;
 }
 
-double max_arr(double *x, int n) {
-	double maxim = DBL_MIN;
+long double max_arr(long double *x, int n) {
+	long double maxim = DBL_MIN;
 	for (int i = 0; i < n; i++) {
 		if (maxim <= x[i]) {
 			maxim = x[i];
@@ -46,8 +46,8 @@ double max_arr(double *x, int n) {
 	return maxim;
 }
 
-double min_arr(double *x, int n) {
-	double minim = DBL_MAX;
+long double min_arr(long double *x, int n) {
+	long double minim = DBL_MAX;
 	for (int i = 0; i < n; i++) {
 		if (minim >= x[i]) {
 			minim = x[i];
@@ -64,18 +64,18 @@ inline unsigned int rnd_u() {
 	return g_rnd_seed = g_rnd_seed * 1664525L + 1013904223L;
 }
 
-inline double rnd() {
+inline long double rnd() {
 	return double(rnd_u()) / UINT_MAX;
 }
 
-double rnd_g() {
+long double rnd_g() {
 	static int was = 0;
-	static double r = 0;
+	static long double r = 0;
 	if (was) {
 		was = 0;
 		return r;
 	}
-	double s, v1, v2;
+	long double s, v1, v2;
 	do {
 		v1 = 2 * rnd() - 1;
 		v2 = 2 * rnd() - 1;
