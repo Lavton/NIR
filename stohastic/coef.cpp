@@ -3,16 +3,18 @@
 #include "coef.h"
 using namespace std;
 
-long double pi = 3.14159265358979323846;
-
+// long double pi = 3.14159265358979323846;
+// long double x0 = pow(10, 17);
+// long double V0 = 5000.0 * 1000 * 100;
+// long double t0 = 3.0 * pow(10, 7);
+// long double k0 = pow(10, 28);
 
 
 long double V(long double x) {
 	long double coef = 0.25;
 
 	long double u1, u2;
-//	u1 = 1.0;
-	u1 = 5000.0 * 1000 * 100;
+	u1 = 1.0;
 	u2 = 0.25 * u1;
 	return (u1 + u2) / 2. - (u1 - u2) / 2.*tanh(x / coef);
 
@@ -35,8 +37,7 @@ long double dVonDx(long double x) {
 	long double coef = 0.25;
 
 	long double u1, u2;
-	// u1 = 1.0;
-	u1 = 5000.0 * 1000 * 100;
+	u1 = 1.0;
 	u2 = 0.25 * u1;
 	long double dx = 0.001;
 	return -(u1 - u2) / 2. / coef / cosh(x / coef) / cosh(x / coef) ;
@@ -52,7 +53,6 @@ long double dVonDx(long double x) {
 }
 
 long double kappa(long double x, long double u) {
-	// long double kappa0 = 3.0;
-	long double kappa0 = 3.0 * pow(10, 27);
+	long double kappa0 = 3.0;
 	return kappa0 * exp(u);
 }

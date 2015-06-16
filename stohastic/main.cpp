@@ -5,12 +5,18 @@
 #include <ctime>
 #include "coef.h"
 
+long double x0 = pow(10, 17);
+long double V0 = 5000.0 * 1000 * 100;
+long double t0 = 3.0 * pow(10, 7);
+long double k0 = pow(10, 28);
+
 long double a(long double x, long double u) {
-	return V(x);
+	return V(x)*(V0*t0/x0);
 }
 
 long double b(long double x, long double u) {
-	return sqrt(2 * kappa(x, u));
+	return sqrt(2 * kappa(x, u))*sqrt(k0*t0)/x0;
+
 }
 
 

@@ -91,6 +91,25 @@
 \begin{equation}
 \frac{\partial f}{\partial t} = \frac{\partial}{\partial x} \kappa \frac{\partial f}{\partial x} - u \frac{\partial f}{\partial x} - \frac{\Delta u}{3} \delta(x) p \frac{\partial f}{\partial p} +Q
 \end{equation}
+
+Решим данное уравнение с помощью неявного метода Эйлера.
+
+Для этого надо подставить вместо производных конечные разности и получить следующий общий вид:
+\begin{equation}
+\frac{f_{i,j,k} - f_{i,j,k-1}}{\Delta t} = \kappa_{j} \frac{f_{i+1,j,k}+f_{i-1,j,k}-2f_{i,j,k}}{\Delta^2 x} - u_i\frac{f_{i,j,k}-f_{i-1,j,k}}{\Delta x}-\frac{u_i-u_{i-1}}{3\Delta x}\frac{f_{i,j,k}-f_{i,j-1,k}}{\Delta y} + Q
+\end{equation}
+Далее система записывается в виде матричного уравнения
+\begin{equation}
+Mx=F
+\end{equation}
+где $M$ - трёхдиаганальная матрица с $A_i$ на поддиаганали, $C_i$ - на главной диаганали и $B_i$ на наддиаганали. В приложении задачи коэффициенты получились следующими:
+\begin{eqnarray}
+A_i&=\frac{\Delta t \kappa_{i,j}}{\Delta^2 x} + \frac{u_i\Delta t}{\Delta x}\\
+C_i&=\frac{2\Delta t \kappa_{i,j}}{\Delta x^2} + \frac{\Delta t u_i}{\Delta x} + \frac{u_i-u_{i-1}\Delta t}{3\Delta x \Delta y} - 1\\
+B_i&=\frac{\Delta t \kappa_{i,J}}{\Delta^2 x}\\
+F_i&=-f_{i,j,k-1}-\frac{f_{i,j-1,k}}{\Delta y} \frac{u_i-u{i-1}\Delta t}{3\Delta x} - Q\Delta t
+\end{eqnarray} 
+Далее данное уравнение решается методом прогонки.
 \subsubsection{Моделирование стохастического процесса}
 В данном случае уравнение принимает вид
 \begin{equation}
@@ -100,10 +119,38 @@
 \begin{equation}
 \dot{\vec{Z}} = \left< \frac{d\vec{Z}}{dt} \right> + \frac{\partial}{\partial\vec{Z}} D
 \end{equation}
-Это уравнение может быть представлено в виде уравнения Ито:
+Это уравнение может быть представлено в форме уравнения Ито:
 \begin{equation}
 d\vec{Z} = d\dot{\vec{Z}}(\vec{Z}, t)+\sqrt{2D}dW
 \end{equation}
+Где $dW$ - Винеровский процесс
+В приложении к конкретной задачи для заряженных частиц имеем
+\begin{eqnarray}
+dx = V(x)dt+\sqrt{2K_{\parallel}}dW\\
+du = - \frac{1}{3} \frac{\partial V}{\partial x} dt
+\end{eqnarray}
+Как известно, общий вид уравнения Ито выглядит как
+\begin{equation}
+dx = a(x, t)dt + b(x,t) \underbrace{\varepsilon \sqrt{dt}}_{dW}
+\end{equation}
+где $a$ имеет физический смысл сноса частицы, а $b$ - диффузии. $\varepsilon$ - нормально распределённая случайная величина.
+
+Задав обе функции, а так же размер и количество шагов по времени, мы получаем предсказание координаты и импульса для одной частицы.
+
+Запустив код для $N$ частиц, можно получить массивы координат и импульсов для конца времени. Далее строя гистограмму распределения для импульса мы получаем империческую функцию распределения $f_p$, которая может быть сравнима с аналогичной функцией, полученной в другом подходе.
+
+Как было написано выше, $a(x,t) \equiv V(x)$, где $V(x)$ - скорость для ударной волны. Стандартная степень сжатия на фронте равна 4, т.е. $V|_{x \ll x_{inj}} = 4V|_{x \gg x_{inj}}$
+Для устойчивости работы программы должно выполняться условие
+\begin{equation}
+V\Delta t \le \Delta x_s \ll \sqrt{K_\parallel \Delta t}
+\end{equation}
+Где $\Delta x_s$ - характерное масштаб фронта. ~\\~\\
+В качестве демонстрации преимуществ данного подхода были реализовано ещё два физических процесса: ускорение электронов с учётом синхротронных потерь и ускорение на сходящихся фронтах.\\
+Синхротронные потери можно ввести, заменив уравнение для логарифма импульса на 
+\begin{equation}
+du = - \left( \frac{1}{3} \frac{\partial V}{\partial x}  + \beta_s\sqrt{1+e^{2u}} \right) dt
+\end{equation}
+Ускорение на сходящихся фронтах соответствует занулению скорости вдали от фронта и увеличению числа частиц в двое.
 %Численное моделирование ускорения частиц на ударных волнах
 \bibliographystyle{gost71s}
 \bibliography{Biblio}
