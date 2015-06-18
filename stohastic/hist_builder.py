@@ -6,7 +6,7 @@ date = [line.strip().split() for line in open("ito.out")]
 x = [float(date[i][0]) for i in xrange(len(date))]
 u = [float(date[i][1]) for i in xrange(len(date))]
 
-his = np.histogram(u, bins=100, range=(-0.5, 10))
+his = np.histogram(u, bins=100, range=(-0.5, 1))
 ords = []
 for i in xrange(len(his[0])):
 	pass
@@ -22,8 +22,8 @@ for i in xrange(len(his[0])):
 		ords.append(0)
 	his[1][i] = np.log10(exp(his[1][i]))
 	# his[0][i] = np.log10(his[0][i])
-	if his[0][i] > 7000:
-		his[0][i] = 7000
+	# if his[0][i] > 7000:
+		# his[0][i] = 7000
 his[1][-1] = np.log10(exp(his[1][-1]))
 
 print his[1]
