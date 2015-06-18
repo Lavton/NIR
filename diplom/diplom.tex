@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{article} %размер бумаги устанавливаем А4, шрифт 12пунктов
+\documentclass[a4paper,14pt]{article} %размер бумаги устанавливаем А4, шрифт 12пунктов
 \usepackage[T2A]{fontenc}
 %\usepackage[utf8]{inputenc} 
 \usepackage[utf8x]{inputenc}
@@ -37,8 +37,20 @@
 \geometry{bottom=2cm}% нижнее поле
 
 
+\makeatletter
+%\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother
 
-\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=3cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=2cm}% верхнее поле
+\geometry{bottom=2cm}% нижнее поле
+\renewcommand*{\thesection}{\arabic{section}}
+
+\abovedisplayskip=1.5\abovedisplayskip %отбивки вокруг формул
+
+\renewcommand{\baselinestretch}{1.5}
 
 \renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
@@ -46,9 +58,64 @@
 \renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}% Меняем везде перечисления на цифра.цифра
 \renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
 \renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
-\renewcommand{\theequation}{\arabic{equation}}
-\begin{document}
 
+\begin{document}
+\begin{titlepage}
+
+\begin{center}
+Федеральное государственное автономное образовательное\\
+учреждение высшего образования\\
+<<Санкт-Петербургский Политехнический университет Петра Великого>>\\
+Институт физики, нанотехнологий и телекоммуникаций\\
+Кафедра космических исследований \\
+\end{center}  
+
+\vspace{1em}
+
+\begin{flushright}
+\parindent=0pt
+\makebox[15em][l]{Работа допущена к защите}\\
+\makebox[15em][l]{Заведующий кафедрой КИ}\\
+\makebox[15em][l]{\hrulefill Варшалович Д.А.}\\
+\makebox[15em][l]{<<\hrulefill >>\hrulefill 2015 г.\phantom{mmmm}}
+\end{flushright}
+
+\vspace{1em}
+
+\begin{center}
+ВЫПУСКНАЯ РАБОТА БАКАЛАВРА\\
+\Large\textbf{<<Численное моделирование ускорения частиц\\ на ударных волнах>>}
+\end{center}
+
+\vspace{1em}
+
+\begin{flushleft}
+\begin{tabbing}
+aaaaaaaaaaaaaaaaa \= aaaaaaaaaaaaaaaaaaaaaaa \kill
+Направление: \> 03.03.02 -- <<Физика>>\\
+Профиль: \> <<Физика космоса>>\\
+\end{tabbing}
+\end{flushleft}
+
+\vspace{1em}
+
+\begin{tabbing}
+  \hspace{17cm}\=\kill
+  Студент гр.43412\>\textbf{Лиознов А.В.}\'\\~\\
+  Руководитель\> \'\\
+  ст.н.с. ФТИ им.\\
+А.Ф.Иоффе, к.ф.-м.н.\>\textbf{Гладилин П.Е.}\'\\
+\end{tabbing}
+
+\vspace{\fill}
+
+\begin{center}
+Санкт-Петербург\\
+2015
+\end{center}
+
+\end{titlepage}
+\newpage
 \tableofcontents
 \newpage
 \section{Введение}
@@ -133,6 +200,7 @@ $\vec{E} = - [\vec{u}\vec{B}]/c$, где $c$ - скорость света.
 \begin{equation}
 \frac{\partial f}{\partial t} = \frac{\partial}{\partial x} \kappa \frac{\partial f}{\partial x} - u \frac{\partial f}{\partial x} - \frac{\Delta u}{3} \delta(x) p \frac{\partial f}{\partial p} +Q
 \end{equation}
+Где $f$ - функция распределения частиц, $\kappa$ - коэффициент диффузии, $Q$ - мощность источника частиц.
 
 Решим данное уравнение с помощью неявного метода Эйлера.
 
@@ -140,6 +208,7 @@ $\vec{E} = - [\vec{u}\vec{B}]/c$, где $c$ - скорость света.
 \begin{equation}
 \frac{f_{i,j,k} - f_{i,j,k-1}}{\Delta t} = \kappa_{j} \frac{f_{i+1,j,k}+f_{i-1,j,k}-2f_{i,j,k}}{\Delta^2 x} - u_i\frac{f_{i,j,k}-f_{i-1,j,k}}{\Delta x}-\frac{u_i-u_{i-1}}{3\Delta x}\frac{f_{i,j,k}-f_{i,j-1,k}}{\Delta y} + Q
 \end{equation}
+Где индексы $i, j, k$ отвечают за координату, импульс и время соответственно, а $y$ есть логарифм от импульса.
 Далее система записывается в виде матричного уравнения
 \begin{equation}
 Mx=F
@@ -171,11 +240,12 @@ d\vec{Z} = d\dot{\vec{Z}}(\vec{Z}, t)+\sqrt{2D}dW
 dx = V(x)dt+\sqrt{2K_{\parallel}}dW\\
 du = - \frac{1}{3} \frac{\partial V}{\partial x} dt
 \end{eqnarray}
+Здесь $V(x)$ - скорость плазмы, $K_\parallel$ - коэффициент диффузии, $u$ - логарифм импульса.\\
 Как известно, общий вид уравнения Ито выглядит как
 \begin{equation}
 dx = a(x, t)dt + b(x,t) \underbrace{\varepsilon \sqrt{dt}}_{dW}
 \end{equation}
-где $a$ имеет физический смысл сноса частицы, а $b$ - диффузии. $\varepsilon$ - нормально распределённая случайная величина.
+где $a$ имеет физический смысл сноса частицы, а $b$ - отклонения. $\varepsilon$ - нормально распределённая случайная величина.
 
 Задав обе функции, а так же размер и количество шагов по времени, мы получаем предсказание координаты и импульса для одной частицы.
 
@@ -192,8 +262,11 @@ V\Delta t \le \Delta x_s \ll \sqrt{K_\parallel \Delta t}
 \begin{equation}
 du = - \left( \frac{1}{3} \frac{\partial V}{\partial x}  + \beta_s\sqrt{1+e^{2u}} \right) dt
 \end{equation}
-Ускорение на сходящихся фронтах соответствует занулению скорости вдали от фронта и увеличению числа частиц в двое.
-%Численное моделирование ускорения частиц на ударных волнах
+Для они существенны лишь для электронов в силу малой массы.
+
+
+Ускорение на сходящихся фронтах соответствует занулению скорости вдали от фронта и увеличению числа частиц в двое. Физический смысл у данной операции следующий:
+%
 \bibliographystyle{gost71s}
 \bibliography{Biblio}
 
