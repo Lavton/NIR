@@ -4,6 +4,7 @@
 #include "coef.h"
 #include "progon.h"
 #include "data_storage.h"
+#include <iostream>
 using namespace std;
 
 void solve_part(int i, int tn, double a, double ymin, double* x, double dy,
@@ -31,12 +32,13 @@ void solve_part(int i, int tn, double a, double ymin, double* x, double dy,
 		double gip = (gn[2][k] + gn[1][k]) / 2.0;
 		double gim = gn[1][k] / 2.0;
 
+
 		C[1] = 1.0 + (dt / (2.0 * dx)) * (kappa(xp, y) / dxp + kappa(xm, y) / dxm);
 		B[1] = -(dt / (2.0 * dx)) * (kappa(xp, y) / dxp);
 		F[1] = gn[1][k] + (dt / (2.0 * dx)) * (kappa(xp, y) * gn[2][k] / dxp) -
 		       (dt / (2.0 * dx)) * (kappa(xp, y) / dxp +
 		                            kappa(xm, y) / dxm) * gn[1][k] - (dt / dx) * (u(xp) * gip -
-		                                u(xm) * gim) + (dt / 3.0) * ((u(xp) - u(xm)) / dx) *
+		                                    u(xm) * gim) + (dt / 3.0) * ((u(xp) - u(xm)) / dx) *
 		       ((gkp - gkm) / dy) + dt * Qinj(x[1], dx, y, dy);
 		for (int i = 2; i < Nx; i++) {
 			gkp = gn[i][k];
@@ -55,7 +57,7 @@ void solve_part(int i, int tn, double a, double ymin, double* x, double dy,
 			                                       (gn[i + 1][k] - gn[i][k]) / dxp - kappa(xm, y) *
 			                                       (gn[i][k] - gn[i - 1][k]) / dxm) - (dt / dx) *
 			       (u(xp) * gip - u(xm) * gim) + (dt / 3.0) * ((u(xp) -
-			           u(xm)) / dx) * ((gkp - gkm) / dy) + dt * Qinj(x[i], dx, y, dy);
+			               u(xm)) / dx) * ((gkp - gkm) / dy) + dt * Qinj(x[i], dx, y, dy);
 		}
 		gkp = gn[Nx][k];
 		gkm = (k == 1) ? 0.0 : gn[Nx][k - 1];
@@ -71,7 +73,7 @@ void solve_part(int i, int tn, double a, double ymin, double* x, double dy,
 		F[Nx] = gn[Nx][k] - (dt / (2.0 * dx)) * (kappa(xm, y) *
 		        (gn[Nx][k] - gn[Nx - 1][k]) / dxm) - (dt / dx) *
 		        (u(xp) * gip - u(xm) * gim) + (dt / 3.0) * ((u(xp) -
-		            u(xm)) / dx) * ((gkp - gkm) / dy) + dt * Qinj(x[Nx], dx, y, dy);
+		                u(xm)) / dx) * ((gkp - gkm) / dy) + dt * Qinj(x[Nx], dx, y, dy);
 
 		matrix_solver(A, C, B, Nx - 1, F, Xg, alpha, beta);
 		for (int l = 0; l < Nx + 1; ++l) {

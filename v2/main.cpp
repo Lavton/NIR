@@ -9,7 +9,6 @@ int main() {
 	int Np = 100;
 	int Nt = 10000;
 	double a = 10000.0;
-	double b = 10000.0;
 	double Pmin = 0.01;
 	double Pmax = 100000.0;
 
@@ -23,13 +22,11 @@ int main() {
 		}
 	}
 	double* x = new double [Nx + 1];
-	//log
 	double ymin = log(Pmin);
 	double dy = log(Pmax / Pmin) / Np;
 
 	//создание сетки по х
 	double h1 = 0.5 * Nx / log(1.0 + a);
-	double h2 = 0.5 * Nx / log(1.0 + b);
 	for (int i = 1; i <= Nx / 2; i++) {
 		x[i] = 1.0 - exp(-(1.0 * i - 0.5 * Nx) / h1);
 	}
