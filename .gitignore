@@ -30,6 +30,3 @@ octave-core
 *.eps
 *.pdf
 *.dat
-
-diplom/
-!*.tex
