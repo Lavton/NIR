@@ -14,7 +14,7 @@ double u(double x) {
 }
 
 double kappa(double x, double y) {
-	double kappa0 = 5.0;
+	double kappa0 = 0.08;
 	return kappa0 * exp(y);
 }
 

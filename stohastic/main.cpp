@@ -5,6 +5,7 @@
 #include <ctime>
 #include "coef.h"
 
+
 long double x0 = pow(10, 17);
 long double V0 = 5000.0 * 1000 * 100;
 long double t0 = 3.0 * pow(10, 7);
@@ -24,7 +25,7 @@ void solve_part(int tn, FILE* out) {
 	const int num = 50000;
 	int lag = 100000;
 	static int part_num = 0;
-	long double dt = 0.1;
+	long double dt = 0.9;
 	long double sqrt_dt = sqrt(dt);
 
 	long double x = 0;
@@ -34,6 +35,7 @@ void solve_part(int tn, FILE* out) {
 		++part_num;
 		if (!(part_num % 100)) {
 			printf("particle № %d\n", ++part_num);
+			system("./hist_builder.py");
 		}
 		long double x = 0;
 		long double u = 0;

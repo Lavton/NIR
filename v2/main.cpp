@@ -10,7 +10,7 @@ int main() {
 	int Nt = 10000;
 	double a = 10000.0;
 	double Pmin = 0.01;
-	double Pmax = 100000.0;
+	double Pmax = 1000.0;
 
 	double **gn = new double* [Nx + 1];
 	double **g = new double* [Nx + 1];
