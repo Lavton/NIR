@@ -3,6 +3,6 @@ size 20 20
 key pos tr 
 data output
 d1 line color #ff0000 key "modeling"
-d2 line color #00ff00 key "running avarange"
-d3 line color #0000ff key "difference"
+d2 lwidth 0.09 line color #00ff00 key "running avarange"
+d3 lstyle 4 line color #0000ff key "difference"
 end graph

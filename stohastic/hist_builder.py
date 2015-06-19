@@ -7,7 +7,7 @@ date = [line.strip().split() for line in open("ito.out")]
 x = [float(date[i][0]) for i in xrange(len(date))]
 u = [float(date[i][1]) for i in xrange(len(date))]
 
-his = np.histogram(u, bins=100, range=(-0.5, 4))
+his = np.histogram(u, bins=100, range=(-0.5, 8))
 ords = []
 for i in xrange(len(his[0])):
 	pass
@@ -29,8 +29,12 @@ his[1][-1] = np.log10(exp(his[1][-1]))
 
 # print his[1]
 # print ords
-#pl.clf()
-#pl.plot(his[1][1:], ords)
+# pl.clf()
+# pl.plot(his[1][1:], ords)
+# pl.xlabel('log10(p)')
+# pl.ylabel('log10(f(p))')
+# pl.gca() #.set_xscale("log")
+# pl.show()
 
 new_y = []
 new_x = []
@@ -66,25 +70,20 @@ def running_avg(inp, window):
 	return res
 
 
-ever = running_avg(new_y, 7)
+ever = running_avg(ords, 7)
 f = open('output', 'w')
-disp = 0
 disp_a = []
-for i in xrange(0,len(new_y)):
-	disp += (new_y[i]-ever[i])**2
-	disp_a.append((new_y[i]-ever[i])**2)
-	f.write("{} {} {} {}\n".format(new_x[i], new_y[i], ever[i], disp_a[i]))
+for i in xrange(0,len(ords)):
+	disp = (ords[i]-ever[i])**2
+	if disp:
+		disp_a.append(disp)
+	f.write("{} {} {} {}\n".format(his[1][i+1], ords[i], ever[i], disp))
 
-disp = sqrt(disp/len(new_y))
 disp_a.sort()
 print(disp_a[len(disp_a)/2])
 
-if (disp_a[len(disp_a)/2] < 0.001):
+if (disp_a[len(disp_a)/2] < 0.004):
 	subprocess.call(["./killing.sh"])
-# pl.xlabel('log10(p)')
-# pl.ylabel('log10(f(p))')
-# pl.gca() #.set_xscale("log")
-# pl.show()
 
 
 # for i in xrange(len(h[0])):

@@ -23,7 +23,7 @@ long double b(long double x, long double u) {
 
 void solve_part(int tn, FILE* out) {
 	const int num = 50000;
-	int lag = 100000;
+	int lag = 990000;
 	static int part_num = 0;
 	long double dt = 0.9;
 	long double sqrt_dt = sqrt(dt);
