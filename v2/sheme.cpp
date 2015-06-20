@@ -5,7 +5,13 @@
 #include "progon.h"
 #include "data_storage.h"
 #include <iostream>
+#include <cmath>
 using namespace std;
+
+long double x0 = pow(10, 17);
+long double V0 = 5000.0 * 1000 * 100;
+long double t0 = 3.0 * pow(10, 7);
+long double k0 = pow(10, 28);
 
 void solve_part(int i, int tn, double a, double ymin, double* x, double dy,
                 double dt, int Nx, int Np, double** gn, double** g) {

@@ -2,9 +2,9 @@ begin graph
 size 19 19
 key pos tr 
 data merge.txt
-d1 lwidth 0.05 lstyle 1 line color #ff0000 key "time 100000"
-d2 lwidth 0.05 lstyle 1 line color #40f000 key "time 250000"
-d3 lwidth 0.05 lstyle 2 line color #000000 key "time 50000"
+d1 lwidth 0.05 lstyle 2 line color #000000 key "time 50000"
+d2 lwidth 0.05 lstyle 1 line color #ff0000 key "time 100000"
+d3 lwidth 0.05 lstyle 1 line color #40f000 key "time 250000"
 d4 lwidth 0.05 lstyle 1 line color blue key "time 600000"
 d5 lwidth 0.05 lstyle 1 line color #003333 key "time 990000"
 end graph

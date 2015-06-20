@@ -14,7 +14,7 @@ double u(double x) {
 }
 
 double kappa(double x, double y) {
-	double kappa0 = 0.08;
+	double kappa0 = 1;
 	return kappa0 * exp(y);
 }
 
@@ -22,7 +22,7 @@ double Qinj(double x, double dx, double y, double dy) {
 //	cout<<x<<dx<<y<<dy;
 	if ((x < 0.1 * dx) && (x > -0.1 * dx) && (y < 0.5 * dy) && (y > -0.5 * dy)) {
 //		cout<<"Hello!";
-		return 1.0;
+		return 5.0;
 	} else {
 		return 0.0;
 	}

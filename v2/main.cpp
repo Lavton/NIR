@@ -7,10 +7,10 @@ using namespace std;
 int main() {
 	int Nx = 200;
 	int Np = 100;
-	int Nt = 10000;
+	int Nt = 20000;
 	double a = 10000.0;
-	double Pmin = 0.01;
-	double Pmax = 100.0;
+	double Pmin = 0.1;
+	double Pmax = 1000000.0;
 
 	double **gn = new double* [Nx + 1];
 	double **g = new double* [Nx + 1];
@@ -22,8 +22,8 @@ int main() {
 		}
 	}
 	double* x = new double [Nx + 1];
-	double ymin = log(Pmin);
-	double dy = log(Pmax / Pmin) / Np;
+	double ymin = log10(Pmin);
+	double dy = log10(Pmax / Pmin) / Np;
 
 	//создание сетки по х
 	double h1 = 0.5 * Nx / log(1.0 + a);
@@ -47,7 +47,7 @@ int main() {
 	ofstream outf1("fp4.dat");
 	for (int k = 1; k < Np; k++) {
 		double y = ymin + k * dy;
-		outf1 << k << " " << g[Nx / 10][k]*exp(y) << " " << g[Nx / 2][k] * exp(y) << " " << g[(Nx * 9) / 10][k]*exp(y) << endl;
+		outf1 << y << " " << g[Nx / 10][k]*exp(y) << " " << g[Nx / 2][k] * exp(y) << " " << g[(Nx * 9) / 10][k]*exp(y) << endl;
 	}
 	outf1.close();
 
@@ -62,7 +62,7 @@ int main() {
 	ofstream outf4("fp4full.dat");
 	for (int i = 0; i < Np; i++) {
 		double y = ymin + i * dy;
-		outf4 << exp(y) / exp(ymin) << " ";
+		outf4 << log10(exp(y)) << " ";
 
 		for (int k = 1; k <= Nx; k++) {
 			outf4 << g[k][i] * exp(y) << " ";
@@ -70,6 +70,18 @@ int main() {
 		outf4 << endl;
 	}
 	outf4.close();
+
+	ofstream outf8("f_x.dat");
+	for (int i = 1; i < Nx; i++) {
+		double y = ymin + i * dy;
+		outf8 << x[i] << " ";
+
+		for (int k = 1; k <= Np; k++) {
+			outf8 << g[i][k] * exp(y) << " ";
+		}
+		outf8 << endl;
+	}
+	outf8.close();
 
 	ofstream outf5("x.dat");
 	for (int i = 0; i < Nx + 1; i++) {

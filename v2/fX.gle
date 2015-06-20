@@ -1,4 +1,3 @@
-
 begin graph 
 size 20 20
 key pos tr 
@@ -6,8 +5,8 @@ key pos tr
 xtitle log_{10}{p/m_pc}
 ytitle f_{p}
 !xaxis log
-data fp4full.dat
+data f_x.dat
 d100 lwidth 0.05 line color #ff0000 key "on shock front"
-!d98 line color #ffcc00 key "below shock front"
-!d105 line color #00ff00 key "above shock front"
+d1 line color #ffcc00 key "below shock front"
+d190 line color #00ff00 key "above shock front"
 end graph

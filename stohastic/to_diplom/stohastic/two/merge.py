@@ -10,11 +10,13 @@ for i in range(1, len(sys.argv), 2):
         data[j]=[float(data[j][0]), float(data[j][int(sys.argv[i+1])+1])]
     dates.append(data)
 
-def avar(data, ind):
+def avar(data, ind, x):
     res = []
     for i in range(1, len(data[ind])):
         if ind:
-            res.append((data[ind][i]+data[ind-1][i])/2)
+            del0 = (x - data[ind-1][0])/(data[ind][i]-data[ind-1][i])
+            del1 = (data[ind][0] - x)/(data[ind][i]-data[ind-1][i])
+            res.append((data[ind][i]*del1+data[ind-1][i]*del0))
         else:
             res.append(data[ind][i])
     return res
@@ -24,16 +26,21 @@ def mergeTwo(data1, data2):
     it1 = 0
     it2 = 0
     while (it1 < len(data1)) and (it2 < len(data2)):
-        if data1[it1] > data2[it2]:
-            merge_data.append([data2[it2][0]]+avar(data1, it1)+data2[it2][1:])
+        if data1[it1][0] > data2[it2][0]:
+            merge_data.append([data2[it2][0]]+avar(data1, it1, data2[it2][0])+data2[it2][1:])
             it2 += 1
-        elif data1[it1] < data2[it2]:
-            merge_data.append([data1[it1][0]]+data1[it1][1:]+avar(data2, it2))
+        elif data1[it1][0] < data2[it2][0]:
+            merge_data.append([data1[it1][0]]+data1[it1][1:]+avar(data2, it2, data1[it1][0]))
             it1 += 1
         else:
             merge_data.append([data1[it1][0]]+data1[it1][1:]+data2[it2][1:])
             it1 += 1
             it2 += 1
+    for i in range(it1, len(data1)):
+        merge_data.append(data1[i]+[0]*len(data2[0]-1))
+    for i in range(it2, len(data2)):
+        merge_data.append([data2[i][0]]+[0]*len(data1[0]-1) + data2[i][1:])
+
     return merge_data
 
 merge_data = reduce(mergeTwo, dates)
