@@ -1,0 +1,9 @@
+begin graph 
+size 20 20
+xtitle x
+ytitle #particals
+key pos tr 
+data merge.txt
+d1 lwidth 0.05 lstyle 1 line color #ff0000
+!d2 lwidth 0.02 lstyle 1 line color #40f000 key "K~const*p"
+end graph

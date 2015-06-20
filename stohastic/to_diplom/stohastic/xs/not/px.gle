@@ -1,0 +1,8 @@
+begin graph 
+size 20 20
+xtitle x
+ytitle log_{10}{p/m_pc}
+key pos tr 
+data ito.out
+d1 marker fcircle msize 0.01 color #ff0000 key "one particles"
+end graph

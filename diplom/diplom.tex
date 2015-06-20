@@ -292,7 +292,7 @@ du = - \left( \frac{1}{3} \frac{\partial V}{\partial x}  + \beta_s\sqrt{1+e^{2u}
 
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=300pt]{stoh_bom_one}
+\includegraphics[width=250pt]{stoh_bom_one}
 \caption{Пример запуска программы решения стохастическим методом}
 \label{res/stoh/common}
 \end{figure}
@@ -304,7 +304,7 @@ du = - \left( \frac{1}{3} \frac{\partial V}{\partial x}  + \beta_s\sqrt{1+e^{2u}
 \end{itemize}
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=300pt]{stoh_particles}
+\includegraphics[width=250pt]{stoh_particles}
 \caption{Пример запуска программы для различного количества частиц}
 \label{res/stoh/particles}
 \end{figure}
@@ -315,11 +315,42 @@ du = - \left( \frac{1}{3} \frac{\partial V}{\partial x}  + \beta_s\sqrt{1+e^{2u}
 Объяснить такое различие можно, просто исходя из того, что частицам сложно долететь до таких импульсов в условии большого коэффициента диффузии.
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=300pt]{stoh_bom_or_not}
+\includegraphics[width=250pt]{stoh_bom_or_not}
 \caption{Пример запуска программы $K_\parallel\equiv const$ и $K_\parallel \sim p $}
 \label{res/stoh/bom}
 \end{figure}
+Рисунок \ref{res/stoh/sinh} показывает различие между возможностью долёта без синхротронных потерь и с ними. Очевидно, что из-за потерь распределение находится в области меньших импульсов. 
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=250pt]{stoh_sinh_or_not}
+\caption{Пример запуска программы без и с учётом синхротронных потерь}
+\label{res/stoh/sinh}
+\end{figure}
 
+Рисунок \ref{res/stoh/two} показывает различие между моделированием ускорения на одной и на двух ударных волнах.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=250pt]{stoh_two_or_one}
+\caption{Пример запуска программы на одной и двух волнах}
+\label{res/stoh/two}
+\end{figure}
+Из рисунка \ref{res/stoh/times} видно, что при различных временах, данных для ускорения частиц, частицы ускоряются до всё больших и больших импульсов.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=250pt]{stoh_times}
+\caption{Пример запуска программы на различных временах}
+\label{res/stoh/times}
+\end{figure}
+
+Наконец, рисунок \ref{res/stoh/x} показывает распределение по оси x для частиц и фазовый портрет пространства.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.3\linewidth]{stoh_x}
+\includegraphics[width=0.3\linewidth]{stoh_px}
+
+\caption{Распределение по x (слева) и фазовый портрет (справа)}
+\label{res/stoh/x}
+\end{figure}
 
 \bibliographystyle{gost71s}
 \bibliography{Biblio}

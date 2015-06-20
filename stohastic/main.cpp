@@ -36,7 +36,7 @@ void solve_part(int tn, FILE* out) {
 		if (!(part_num % 100)) {
 			printf("particle № %d\n", ++part_num);
 			system("./hist_builder.py");
-			if (part_num >= 14401) {
+			if (part_num > 6500/2) {
 				exit(0);
 			}
 		}
@@ -44,7 +44,7 @@ void solve_part(int tn, FILE* out) {
 		long double u = 0;
 		for (int j = 0; j < lag; j++, t += dt) {
 			x += a(x, u) * dt + b(x, u) * rnd_g() * sqrt_dt;
-			u += ((-1.0 / 3.) * dVonDx(x)*(V0/x0) /* - 0.00004 * sqrt(1 + exp(2 * u))*/) * dt*t0;
+			u += ((-1.0 / 3.) * dVonDx(x)/* - 0.00004 * sqrt(1 + exp(2 * u))*/) * dt*t0*(V0/x0);
 			// printf("%f %f\n", exp(2*u), sqrt(1+exp(2*u)));
 		}
 		fprintf(out, "%Lg %Lg\n", x, u);
