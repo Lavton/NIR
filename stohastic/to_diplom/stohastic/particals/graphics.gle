@@ -1,0 +1,11 @@
+begin graph 
+size 20 20
+xtitle log_{10}{p/m_pc}
+ytitle #particals
+key pos tr 
+data merge.txt
+d1 lwidth 0.02 lstyle 1 line color #ff0000 key "100 particles"
+d2 lwidth 0.02 lstyle 1 line color #40f000 key "200 particles"
+d3 lwidth 0.02 lstyle 1 line color #000000 key "800 particles"
+d4 lwidth 0.02 lstyle 1 line color blue key "3200 particles"
+end graph
