@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.8)  21 JUN 2015 23:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.8)  22 JUN 2015 00:07
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2081,7 +2081,7 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [15
 
-] (./Lioznov_presentation.toc)
+]
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
  []
@@ -2093,20 +2093,19 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [16
 
-] <./images/r_common.png, id=209, 1388.18625pt x 1386.17876pt>
-File: ./images/r_common.png Graphic file (type png)
+] <images/principle.pdf, id=205, 533.71753pt x 409.68275pt>
+File: images/principle.pdf Graphic file (type pdf)
 
-<use ./images/r_common.png>
-Package pdftex.def Info: ./images/r_common.png used on input line 168.
-(pdftex.def)             Requested size: 156.23871pt x 156.0124pt.
+<use images/principle.pdf>
+Package pdftex.def Info: images/principle.pdf used on input line 154.
+(pdftex.def)             Requested size: 243.03859pt x 186.55597pt.
+ (./images/principle.pdf_tex
+File: images/principle.pdf Graphic file (type pdf)
 
-<./images/stoh_bom_one.png, id=210, 1387.1825pt x 1386.17876pt>
-File: ./images/stoh_bom_one.png Graphic file (type png)
-
-<use ./images/stoh_bom_one.png>
-Package pdftex.def Info: ./images/stoh_bom_one.png used on input line 168.
-(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
-
+<use images/principle.pdf>
+Package pdftex.def Info: images/principle.pdf used on input line 52.
+(pdftex.def)             Requested size: 243.03859pt x 186.55597pt.
+)
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
  []
@@ -2118,21 +2117,7 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [17
 
- <./images/r_common.png> <./images/stoh_bom_one.png>]
-<./images/r_times.png, id=218, 1387.1825pt x 1386.17876pt>
-File: ./images/r_times.png Graphic file (type png)
-
-<use ./images/r_times.png>
-Package pdftex.def Info: ./images/r_times.png used on input line 192.
-(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
-
-<./images/stoh_times.png, id=219, 1387.1825pt x 1386.17876pt>
-File: ./images/stoh_times.png Graphic file (type png)
-
-<use ./images/stoh_times.png>
-Package pdftex.def Info: ./images/stoh_times.png used on input line 192.
-(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
-
+ <./images/principle.pdf>] (./Lioznov_presentation.toc)
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
  []
@@ -2144,20 +2129,19 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [18
 
- <./images/r_times.png> <./images/stoh_times.png>]
-<./images/r_Qinj.png, id=227, 1387.1825pt x 1386.17876pt>
-File: ./images/r_Qinj.png Graphic file (type png)
+] <./images/r_common.png, id=226, 1388.18625pt x 1386.17876pt>
+File: ./images/r_common.png Graphic file (type png)
 
-<use ./images/r_Qinj.png>
-Package pdftex.def Info: ./images/r_Qinj.png used on input line 216.
-(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
-
-<./images/stoh_particles.png, id=228, 1388.18625pt x 1386.17876pt>
-File: ./images/stoh_particles.png Graphic file (type png)
-
-<use ./images/stoh_particles.png>
-Package pdftex.def Info: ./images/stoh_particles.png used on input line 216.
+<use ./images/r_common.png>
+Package pdftex.def Info: ./images/r_common.png used on input line 177.
 (pdftex.def)             Requested size: 156.23871pt x 156.0124pt.
+
+<./images/stoh_bom_one.png, id=227, 1387.1825pt x 1386.17876pt>
+File: ./images/stoh_bom_one.png Graphic file (type png)
+
+<use ./images/stoh_bom_one.png>
+Package pdftex.def Info: ./images/stoh_bom_one.png used on input line 177.
+(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
 
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
@@ -2170,19 +2154,19 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [19
 
- <./images/r_Qinj.png> <./images/stoh_particles.png>]
-<./images/r_bom_or_not2.png, id=237, 1387.1825pt x 1386.17876pt>
-File: ./images/r_bom_or_not2.png Graphic file (type png)
+ <./images/r_common.png> <./images/stoh_bom_one.png>]
+<./images/r_times.png, id=236, 1387.1825pt x 1386.17876pt>
+File: ./images/r_times.png Graphic file (type png)
 
-<use ./images/r_bom_or_not2.png>
-Package pdftex.def Info: ./images/r_bom_or_not2.png used on input line 240.
+<use ./images/r_times.png>
+Package pdftex.def Info: ./images/r_times.png used on input line 201.
 (pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
 
-<./images/stoh_bom_or_not.png, id=238, 1387.1825pt x 1386.17876pt>
-File: ./images/stoh_bom_or_not.png Graphic file (type png)
+<./images/stoh_times.png, id=237, 1387.1825pt x 1386.17876pt>
+File: ./images/stoh_times.png Graphic file (type png)
 
-<use ./images/stoh_bom_or_not.png>
-Package pdftex.def Info: ./images/stoh_bom_or_not.png used on input line 240.
+<use ./images/stoh_times.png>
+Package pdftex.def Info: ./images/stoh_times.png used on input line 201.
 (pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
 
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
@@ -2196,20 +2180,20 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [20
 
- <./images/r_bom_or_not2.png> <./images/stoh_bom_or_not.png>]
-<./images/stoh_sinh_or_not.png, id=246, 1387.1825pt x 1386.17876pt>
-File: ./images/stoh_sinh_or_not.png Graphic file (type png)
+ <./images/r_times.png> <./images/stoh_times.png>]
+<./images/r_Qinj.png, id=245, 1387.1825pt x 1386.17876pt>
+File: ./images/r_Qinj.png Graphic file (type png)
 
-<use ./images/stoh_sinh_or_not.png>
-Package pdftex.def Info: ./images/stoh_sinh_or_not.png used on input line 264.
+<use ./images/r_Qinj.png>
+Package pdftex.def Info: ./images/r_Qinj.png used on input line 225.
 (pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
 
-<./images/stoh_two_or_one.png, id=247, 1387.1825pt x 1386.17876pt>
-File: ./images/stoh_two_or_one.png Graphic file (type png)
+<./images/stoh_particles.png, id=246, 1388.18625pt x 1386.17876pt>
+File: ./images/stoh_particles.png Graphic file (type png)
 
-<use ./images/stoh_two_or_one.png>
-Package pdftex.def Info: ./images/stoh_two_or_one.png used on input line 264.
-(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
+<use ./images/stoh_particles.png>
+Package pdftex.def Info: ./images/stoh_particles.png used on input line 225.
+(pdftex.def)             Requested size: 156.23871pt x 156.0124pt.
 
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
@@ -2222,13 +2206,20 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [21
 
- <./images/stoh_sinh_or_not.png> <./images/stoh_two_or_one.png>]
-<./images/compare.png, id=255, 1387.1825pt x 1386.17876pt>
-File: ./images/compare.png Graphic file (type png)
+ <./images/r_Qinj.png> <./images/stoh_particles.png>]
+<./images/r_bom_or_not2.png, id=254, 1387.1825pt x 1386.17876pt>
+File: ./images/r_bom_or_not2.png Graphic file (type png)
 
-<use ./images/compare.png>
-Package pdftex.def Info: ./images/compare.png used on input line 281.
-(pdftex.def)             Requested size: 104.1609pt x 104.08583pt.
+<use ./images/r_bom_or_not2.png>
+Package pdftex.def Info: ./images/r_bom_or_not2.png used on input line 249.
+(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
+
+<./images/stoh_bom_or_not.png, id=255, 1387.1825pt x 1386.17876pt>
+File: ./images/stoh_bom_or_not.png Graphic file (type png)
+
+<use ./images/stoh_bom_or_not.png>
+Package pdftex.def Info: ./images/stoh_bom_or_not.png used on input line 249.
+(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
 
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
@@ -2241,7 +2232,21 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [22
 
- <./images/compare.png>] (./Lioznov_presentation.toc)
+ <./images/r_bom_or_not2.png> <./images/stoh_bom_or_not.png>]
+<./images/stoh_sinh_or_not.png, id=263, 1387.1825pt x 1386.17876pt>
+File: ./images/stoh_sinh_or_not.png Graphic file (type png)
+
+<use ./images/stoh_sinh_or_not.png>
+Package pdftex.def Info: ./images/stoh_sinh_or_not.png used on input line 273.
+(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
+
+<./images/stoh_two_or_one.png, id=264, 1387.1825pt x 1386.17876pt>
+File: ./images/stoh_two_or_one.png Graphic file (type png)
+
+<use ./images/stoh_two_or_one.png>
+Package pdftex.def Info: ./images/stoh_two_or_one.png used on input line 273.
+(pdftex.def)             Requested size: 156.23871pt x 156.11816pt.
+
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
  []
@@ -2253,7 +2258,14 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [23
 
-]
+ <./images/stoh_sinh_or_not.png> <./images/stoh_two_or_one.png>]
+<./images/compare.png, id=272, 1387.1825pt x 1386.17876pt>
+File: ./images/compare.png Graphic file (type png)
+
+<use ./images/compare.png>
+Package pdftex.def Info: ./images/compare.png used on input line 290.
+(pdftex.def)             Requested size: 104.1609pt x 104.08583pt.
+
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
  []
@@ -2265,7 +2277,7 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [24
 
-]
+ <./images/compare.png>] (./Lioznov_presentation.toc)
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
  []
@@ -2277,13 +2289,7 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [25
 
-] <./images/shock_ill.jpg, id=290, 1927.2pt x 1084.05pt>
-File: ./images/shock_ill.jpg Graphic file (type jpg)
-
-<use ./images/shock_ill.jpg>
-Package pdftex.def Info: ./images/shock_ill.jpg used on input line 301.
-(pdftex.def)             Requested size: 277.76067pt x 156.2321pt.
-
+]
 Overfull \hbox (578.74493pt too wide) has occurred while \output is active
  [][]  \T2A/cmr/m/n/5 ([])  
  []
@@ -2295,6 +2301,36 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 
 [26
 
+]
+Overfull \hbox (578.74493pt too wide) has occurred while \output is active
+ [][]  \T2A/cmr/m/n/5 ([])  
+ []
+
+
+Overfull \hbox (81.42542pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[27
+
+] <./images/shock_ill.jpg, id=307, 1927.2pt x 1084.05pt>
+File: ./images/shock_ill.jpg Graphic file (type jpg)
+
+<use ./images/shock_ill.jpg>
+Package pdftex.def Info: ./images/shock_ill.jpg used on input line 310.
+(pdftex.def)             Requested size: 277.76067pt x 156.2321pt.
+
+Overfull \hbox (578.74493pt too wide) has occurred while \output is active
+ [][]  \T2A/cmr/m/n/5 ([])  
+ []
+
+
+Overfull \hbox (81.42542pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[28
+
  <./images/shock_ill.jpg>]
 \tf@nav=\write6
 \openout6 = `Lioznov_presentation.nav'.
@@ -2305,11 +2341,11 @@ Overfull \hbox (81.42542pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `Lioznov_presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 302.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 302.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 311.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 311.
  (./Lioznov_presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 302.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 302.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 311.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 311.
 Package rerunfilecheck Info: File `Lioznov_presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D4EB269661A7A941275BB0D80DBDC052;559.
 
@@ -2317,13 +2353,13 @@ Package rerunfilecheck Info: File `Lioznov_presentation.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 302.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 311.
  ) 
 Here is how much of TeX's memory you used:
- 24607 strings out of 493304
- 418206 string characters out of 6139872
- 478392 words of memory out of 5000000
- 27396 multiletter control sequences out of 15000+600000
+ 24620 strings out of 493304
+ 418422 string characters out of 6139872
+ 478390 words of memory out of 5000000
+ 27402 multiletter control sequences out of 15000+600000
  16347 words of font info for 49 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,17n,77p,409b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2341,10 +2377,10 @@ fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb>
-Output written on Lioznov_presentation.pdf (26 pages, 859332 bytes).
+Output written on Lioznov_presentation.pdf (28 pages, 868310 bytes).
 PDF statistics:
- 627 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 656 PDF objects out of 1000 (max. 8388607)
+ 308 compressed objects within 4 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 
