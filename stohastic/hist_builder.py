@@ -70,7 +70,7 @@ def running_avg(inp, window):
     return res
 
 
-ever = running_avg(ords, 7)
+ever = running_avg(ords, 5)
 f = open('output', 'w')
 disp_a = []
 for i in xrange(0,len(ords)):
@@ -82,8 +82,8 @@ for i in xrange(0,len(ords)):
 disp_a.sort()
 print(disp_a[len(disp_a)/2])
 
-# if (disp_a[len(disp_a)/2] < 0.002):
-#     subprocess.call(["./killing.sh"])
+if (disp_a[len(disp_a)/2] < 0.004):
+    subprocess.call(["./killing.sh"])
 
 
 # for i in xrange(len(h[0])):

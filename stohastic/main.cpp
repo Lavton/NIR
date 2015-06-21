@@ -36,9 +36,9 @@ void solve_part(int tn, FILE* out) {
 		if (!(part_num % 100)) {
 			printf("particle № %d\n", ++part_num);
 			system("./hist_builder.py");
-			if (part_num > 6500/2) {
-				exit(0);
-			}
+			// if (part_num > 6500/2) {
+			// 	exit(0);
+			// }
 		}
 		long double x = 0;
 		long double u = 0;

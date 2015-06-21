@@ -3,13 +3,13 @@
 
 class DataStorage {
 public:
-	double **alpha;
-	double **beta;
-	double **A;
-	double **C;
-	double **B;
-	double **F;
-	double **Xg;
+	long double **alpha;
+	long double **beta;
+	long double **A;
+	long double **C;
+	long double **B;
+	long double **F;
+	long double **Xg;
 	static DataStorage& Instance(int Nx, int tn) {
 		static DataStorage theSingleInstance(Nx, tn);
 		return theSingleInstance;
@@ -17,22 +17,22 @@ public:
 
 private:
 	DataStorage(int Nx, int tn) {
-		alpha = new double*[tn];
-		beta = new double*[tn];
-		A = new double*[tn];
-		C = new double*[tn];
-		B = new double*[tn];
-		F = new double*[tn];
-		Xg = new double*[tn];
+		alpha = new long double*[tn];
+		beta = new long double*[tn];
+		A = new long double*[tn];
+		C = new long double*[tn];
+		B = new long double*[tn];
+		F = new long double*[tn];
+		Xg = new long double*[tn];
 
 		for (int i = 0; i < tn; i++) {
-			alpha[i] = new double[Nx + 1];
-			beta[i] = new double[Nx + 1];
-			A[i] = new double[Nx];
-			C[i] = new double[Nx + 1];
-			B[i] = new double[Nx];
-			F[i] = new double[Nx + 1];
-			Xg[i] = new double[Nx + 1];
+			alpha[i] = new long double[Nx + 1];
+			beta[i] = new long double[Nx + 1];
+			A[i] = new long double[Nx];
+			C[i] = new long double[Nx + 1];
+			B[i] = new long double[Nx];
+			F[i] = new long double[Nx + 1];
+			Xg[i] = new long double[Nx + 1];
 		}
 	}
 };

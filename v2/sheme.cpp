@@ -13,30 +13,30 @@ long double V0 = 5000.0 * 1000 * 100;
 long double t0 = 3.0 * pow(10, 7);
 long double k0 = pow(10, 28);
 
-void solve_part(int i, int tn, double a, double ymin, double* x, double dy,
-                double dt, int Nx, int Np, double** gn, double** g) {
+void solve_part(int i, int tn, long double a, long double ymin, long double* x, long double dy,
+                long double dt, int Nx, int Np, long double** gn, long double** g) {
 
 	int begin = i * Np / tn;
 	int end = (i + 1) * Np / tn;
-	double *A = DataStorage::Instance(Nx, tn).A[i];
-	double *C = DataStorage::Instance(Nx, tn).C[i];
-	double *B = DataStorage::Instance(Nx, tn).B[i];
-	double *F = DataStorage::Instance(Nx, tn).F[i];
-	double *Xg = DataStorage::Instance(Nx, tn).Xg[i];
-	double *alpha = DataStorage::Instance(Nx, tn).alpha[i];
-	double *beta = DataStorage::Instance(Nx, tn).beta[i];
+	long double *A = DataStorage::Instance(Nx, tn).A[i];
+	long double *C = DataStorage::Instance(Nx, tn).C[i];
+	long double *B = DataStorage::Instance(Nx, tn).B[i];
+	long double *F = DataStorage::Instance(Nx, tn).F[i];
+	long double *Xg = DataStorage::Instance(Nx, tn).Xg[i];
+	long double *alpha = DataStorage::Instance(Nx, tn).alpha[i];
+	long double *beta = DataStorage::Instance(Nx, tn).beta[i];
 
 	for (int k = begin; k < end; ++k) {
-		double y = ymin + k * dy;
-		double gkp = gn[1][k];
-		double gkm = (k == 1) ? 0.0 : gn[1][k - 1];
-		double dx = (x[2] + a) / 2.0;
-		double dxp = x[2] - x[1];
-		double dxm = x[1] + a;
-		double xp = (x[2] + x[1]) / 2.0;
-		double xm = (x[1] - a) / 2.0;
-		double gip = (gn[2][k] + gn[1][k]) / 2.0;
-		double gim = gn[1][k] / 2.0;
+		long double y = ymin + k * dy;
+		long double gkp = gn[1][k];
+		long double gkm = (k == 1) ? 0.0 : gn[1][k - 1];
+		long double dx = (x[2] + a) / 2.0;
+		long double dxp = x[2] - x[1];
+		long double dxm = x[1] + a;
+		long double xp = (x[2] + x[1]) / 2.0;
+		long double xm = (x[1] - a) / 2.0;
+		long double gip = (gn[2][k] + gn[1][k]) / 2.0;
+		long double gim = gn[1][k] / 2.0;
 
 
 		C[1] = 1.0 + (dt / (2.0 * dx)) * (kappa(xp, y) / dxp + kappa(xm, y) / dxm);
@@ -87,8 +87,8 @@ void solve_part(int i, int tn, double a, double ymin, double* x, double dy,
 		}
 	}
 }
-void solver(double a, double ymin, double* x, double dy,
-            double dt, int Nx, int Np, double** gn, double** g) {
+void solver(long double a, long double ymin, long double* x, long double dy,
+            long double dt, int Nx, int Np, long double** gn, long double** g) {
 	int tn = 4;
 	std::thread** tr = new std::thread* [4];
 	for (int i = 0; i < tn; i++) {
