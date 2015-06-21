@@ -28,5 +28,4 @@ octave-core
 *.txt
 *.o
 *.eps
-*.pdf
 *.dat
