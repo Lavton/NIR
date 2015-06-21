@@ -241,7 +241,7 @@ F_i&=-f_{i,j,k-1}-\frac{f_{i,j-1,k}}{\Delta y} \frac{u_i-u{i-1}\Delta t}{3\Delta
 \end{equation}
 Где $Z\equiv (x, p)$.
 \begin{equation}
-\dot{\vec{Z}} = \left< \frac{d\vec{Z}}{dt} \right> + \frac{\partial}{\partial\vec{Z}} D
+\dot{\vec{Z}} = \left< \frac{dec{Z}}{dt} \right> + \frac{\partial}{\partial\vec{Z}} D
 \end{equation}
 Это уравнение может быть представлено в форме уравнения Ито:
 \begin{equation}
@@ -399,6 +399,7 @@ du = - \left( \frac{1}{3} \frac{\partial V}{\partial x}  + \beta_s\sqrt{1+e^{2u}
 Значит оценка памяти, необходимой для работы, есть $O(1)$
 \end{enumerate}
 
+Был изучен стохастический метод решения уравнений, написана программа по решению диффузиозно-конвективного уравнения стохастическим методом и проанализирована зависимость решения от различных параметров.
 
 \subsection{Сравнение метода Эйлера и стохастического метода}
 
