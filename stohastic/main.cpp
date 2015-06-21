@@ -23,7 +23,7 @@ long double b(long double x, long double u) {
 
 void solve_part(int tn, FILE* out) {
 	const int num = 50000;
-	int lag = 200000;
+	int lag = 20000;
 	static int part_num = 0;
 	long double dt = 0.9;
 	long double sqrt_dt = sqrt(dt);
@@ -36,9 +36,9 @@ void solve_part(int tn, FILE* out) {
 		if (!(part_num % 100)) {
 			printf("particle № %d\n", ++part_num);
 			system("./hist_builder.py");
-			// if (part_num > 6500/2) {
-			// 	exit(0);
-			// }
+			if (part_num > 1400) {
+				exit(0);
+			}
 		}
 		long double x = 0;
 		long double u = 0;

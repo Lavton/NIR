@@ -8,10 +8,7 @@
 #include <cmath>
 using namespace std;
 
-long double x0 = pow(10, 17);
-long double V0 = 5000.0 * 1000 * 100;
-long double t0 = 3.0 * pow(10, 7);
-long double k0 = pow(10, 28);
+
 
 void solve_part(int i, int tn, long double a, long double ymin, long double* x, long double dy,
                 long double dt, int Nx, int Np, long double** gn, long double** g) {

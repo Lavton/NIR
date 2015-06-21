@@ -5,10 +5,15 @@
 
 using namespace std;
 int main() {
+	long double x0 = pow(10, 17);
+long double V0 = 5000.0 * 1000 * 100;
+long double t0 = 3.0 * pow(10, 7);
+long double k0 = pow(10, 28);
+
 	int Nx = 200;
 	int Np = 100;
-	int Nt = 10000;
-	long double a = 10000.0;
+	int Nt = 100000;
+	long double a = x0;
 	long double Pmin = 0.1;
 	long double Pmax = 1000000.0;
 
@@ -33,7 +38,7 @@ int main() {
 	for (int i = Nx / 2 + 1; i < Nx + 1; i++) {
 		x[i] = exp((1.0 * i - 0.5 * Nx) / h1) - 1.0;
 	}
-	long double dt = 0.001;
+	long double dt = 0.001*t0;
 
 	for (int i = 1; i <= Nt; i++) {
 		cout << i << endl;
@@ -41,7 +46,21 @@ int main() {
 		long double **tmp = gn;
 		gn = g;
 		g = gn;
+		if (!(i % 1000))
+		{
+			cout<<"write!\n";
+			ofstream outf4("fp4full.dat");
+			for (int ij = 0; ij < Np; ij++) {
+				long double y = ymin + ij * dy;
+				outf4 << log10(exp(y)) << " ";
 
+				for (int k = 1; k <= Nx; k++) {
+					outf4 << g[k][ij] * exp(y) << " ";
+				}
+				outf4 << endl;
+			}
+			outf4.close();
+		}
 	}
 
 	ofstream outf1("fp4.dat");
