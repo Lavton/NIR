@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.8)  21 JUN 2015 13:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.8)  21 JUN 2015 14:03
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1309,13 +1309,13 @@ Package babel Info: Redefining russian shorthand "|
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 283.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 286.
+(babel)             in language  on input line 285.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 286.
+(babel)             in language  on input line 285.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 286.
+(babel)             in language  on input line 285.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 286.
+(babel)             in language  on input line 285.
 [8]
 LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 286
 .
@@ -1438,84 +1438,112 @@ Package babel Info: Redefining russian shorthand "|
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 381.
  [15 <./images/stoh_particles.png>]
-<./images/stoh_sinh_or_not.png, id=190, 1387.1825pt x 1386.17876pt>
-File: ./images/stoh_sinh_or_not.png Graphic file (type png)
-
-<use ./images/stoh_sinh_or_not.png>
-Package pdftex.def Info: ./images/stoh_sinh_or_not.png used on input line 384.
-(pdftex.def)             Requested size: 250.0pt x 249.81868pt.
-
-<./images/stoh_two_or_one.png, id=192, 1387.1825pt x 1386.17876pt>
-File: ./images/stoh_two_or_one.png Graphic file (type png)
-
-<use ./images/stoh_two_or_one.png>
-Package pdftex.def Info: ./images/stoh_two_or_one.png used on input line 392.
-(pdftex.def)             Requested size: 250.0pt x 249.81868pt.
-
-<./images/stoh_times.png, id=194, 1387.1825pt x 1386.17876pt>
+<./images/stoh_times.png, id=191, 1387.1825pt x 1386.17876pt>
 File: ./images/stoh_times.png Graphic file (type png)
 
 <use ./images/stoh_times.png>
-Package pdftex.def Info: ./images/stoh_times.png used on input line 399.
+Package pdftex.def Info: ./images/stoh_times.png used on input line 385.
 (pdftex.def)             Requested size: 250.0pt x 249.81868pt.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 403.
+(babel)             in language  on input line 392.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 403.
+(babel)             in language  on input line 392.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language  on input line 392.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language  on input line 392.
+ [16 <./images/stoh_bom_or_not.png> <./images/stoh_times.png>]
 Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 403.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 403.
- [16 <./images/stoh_bom_or_not.png> <./images/stoh_sinh_or_not.png>] <./images/
-stoh_x.png, id=203, 1388.18625pt x 1386.17876pt>
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language  on input line 405.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language  on input line 405.
+
+<./images/stoh_sinh_or_not.png, id=198, 1387.1825pt x 1386.17876pt>
+File: ./images/stoh_sinh_or_not.png Graphic file (type png)
+
+<use ./images/stoh_sinh_or_not.png>
+Package pdftex.def Info: ./images/stoh_sinh_or_not.png used on input line 409.
+(pdftex.def)             Requested size: 250.0pt x 249.81868pt.
+
+<./images/stoh_two_or_one.png, id=200, 1387.1825pt x 1386.17876pt>
+File: ./images/stoh_two_or_one.png Graphic file (type png)
+
+<use ./images/stoh_two_or_one.png>
+Package pdftex.def Info: ./images/stoh_two_or_one.png used on input line 417.
+(pdftex.def)             Requested size: 250.0pt x 249.81868pt.
+
+<./images/stoh_x.png, id=202, 1388.18625pt x 1386.17876pt>
 File: ./images/stoh_x.png Graphic file (type png)
 
 <use ./images/stoh_x.png>
-Package pdftex.def Info: ./images/stoh_x.png used on input line 407.
+Package pdftex.def Info: ./images/stoh_x.png used on input line 425.
 (pdftex.def)             Requested size: 145.11053pt x 144.8868pt.
 
-<./images/stoh_px.png, id=204, 1388.18625pt x 1386.17876pt>
+<./images/stoh_px.png, id=203, 1388.18625pt x 1386.17876pt>
 File: ./images/stoh_px.png Graphic file (type png)
 
 <use ./images/stoh_px.png>
-Package pdftex.def Info: ./images/stoh_px.png used on input line 408.
+Package pdftex.def Info: ./images/stoh_px.png used on input line 426.
 (pdftex.def)             Requested size: 145.11053pt x 144.8868pt.
 
 No file diplom.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 417.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 435.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 417.
+(babel)             in language  on input line 435.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 417.
+(babel)             in language  on input line 435.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 417.
+(babel)             in language  on input line 435.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 417.
-[17 <./images/stoh_two_or_one.png> <./images/stoh_times.png>]
+(babel)             in language  on input line 435.
+[17]
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 417.
+(babel)             in language  on input line 435.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 417.
+(babel)             in language  on input line 435.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 417.
+(babel)             in language  on input line 435.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 417.
- [18 <./images/stoh_x.png> <./images/stoh_px.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 417.
- (./diplom.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 417.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 417.
-Package rerunfilecheck Info: File `diplom.out' has not changed.
-(rerunfilecheck)             Checksum: D85FF02BC53765A92ECEEF7F73BA6AB1;2790.
+(babel)             in language  on input line 435.
+ [18 <./images/stoh_sinh_or_not.png> <./images/stoh_two_or_one.png>]
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language  on input line 435.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language  on input line 435.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language  on input line 435.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language  on input line 435.
 
+[19 <./images/stoh_x.png> <./images/stoh_px.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 435.
+ (./diplom.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 435.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 435.
+
+
+Package rerunfilecheck Warning: File `diplom.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `diplom.out':
+(rerunfilecheck)             Before: D85FF02BC53765A92ECEEF7F73BA6AB1;2790
+(rerunfilecheck)             After:  504370D260DB67F8E12EA25C16F2235C;3799.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 417.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 435.
  ) 
 Here is how much of TeX's memory you used:
- 15189 strings out of 493304
- 216606 string characters out of 6139872
+ 15192 strings out of 493304
+ 216641 string characters out of 6139872
  317593 words of memory out of 5000000
  18345 multiletter control sequences out of 15000+600000
  13136 words of font info for 36 fonts, out of 8000000 for 9000
@@ -1535,10 +1563,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy7.pfb>
-Output written on diplom.pdf (19 pages, 783650 bytes).
+Output written on diplom.pdf (20 pages, 786491 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
- 234 compressed objects within 3 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
  146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
