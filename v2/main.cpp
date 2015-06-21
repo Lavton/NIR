@@ -6,16 +6,16 @@
 using namespace std;
 int main() {
 	long double x0 = pow(10, 17);
-long double V0 = 5000.0 * 1000 * 100;
-long double t0 = 3.0 * pow(10, 7);
-long double k0 = pow(10, 28);
+long double V0 = 1; /*5000.0 * 1000 * 100;*/
+long double t0 = 1; /*3.0 * pow(10, 7);*/
+long double k0 = 1; /*pow(10, 28);*/
 
 	int Nx = 200;
 	int Np = 100;
-	int Nt = 100000;
-	long double a = x0;
+	int Nt = 51000; /*100000;*/
+	long double a = 10000.0/*x0*/;
 	long double Pmin = 0.1;
-	long double Pmax = 1000000.0;
+	long double Pmax = 10000000.0;
 
 	long double **gn = new long double* [Nx + 1];
 	long double **g = new long double* [Nx + 1];
