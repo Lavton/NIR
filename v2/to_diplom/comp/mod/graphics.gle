@@ -1,0 +1,9 @@
+begin graph 
+size 20 20
+xtitle log_{10}{p/m_pc}
+ytitle #particals
+key pos tr 
+data merge.txt
+d1 lwidth 0.04 lstyle 1 line color #ff0000 key "Eiler"
+d2 lwidth 0.04 lstyle 1 line color #40f000 key "Stohastic"
+end graph

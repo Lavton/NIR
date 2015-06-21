@@ -84,7 +84,7 @@ print(disp_a[len(disp_a)/2])
 
 if (disp_a[len(disp_a)/2] < 0.004):
     pass
-    # subprocess.call(["./killing.sh"])
+    subprocess.call(["./killing.sh"])
 
 
 # for i in xrange(len(h[0])):

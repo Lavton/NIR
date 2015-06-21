@@ -12,7 +12,7 @@ long double k0 = 1; /*pow(10, 28);*/
 
 	int Nx = 200;
 	int Np = 100;
-	int Nt = 51000; /*100000;*/
+	int Nt = 20000; /*100000;*/
 	long double a = 10000.0/*x0*/;
 	long double Pmin = 0.1;
 	long double Pmax = 10000000.0;
@@ -60,6 +60,11 @@ long double k0 = 1; /*pow(10, 28);*/
 				outf4 << endl;
 			}
 			outf4.close();
+		}
+		if (!(i % 10000))
+		{
+			string sttt = "notify-send "+ std::to_string(i);
+			system(sttt.c_str());
 		}
 	}
 

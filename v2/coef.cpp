@@ -16,7 +16,7 @@ long double u(long double x) {
 
 long double kappa(long double x, long double y) {
 	long double k0 = 1; /*3*pow(10, 27);*/
-	long double kappa0 = 0.6*k0;
+	long double kappa0 = 0.1*k0;
 	return kappa0 * exp(y);
 }
 
@@ -25,7 +25,7 @@ long double Qinj(long double x, long double dx, long double y, long double dy) {
 //	cout<<x<<dx<<y<<dy;
 	if ((x < 0.1 * dx) && (x > -0.1 * dx) && (y < 0.5 * dy) && (y > -0.5 * dy)) {
 //		cout<<"Hello!";
-		return 3.0;
+		return 70.0;
 	} else {
 		return 0.0;
 	}
