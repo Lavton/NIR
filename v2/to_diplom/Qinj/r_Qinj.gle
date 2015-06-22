@@ -1,8 +1,9 @@
+set hei 0.8
 begin graph 
 size 20 20
 xtitle log_{10}{p/m_pc}
 ytitle f_pp^2
-key pos tr 
+key pos tr hei 0.6
 data merge.txt
 d1 lwidth 0.05 lstyle 1 line color #ff0000 key "Q_{inj}=1"
 d2 lwidth 0.05 lstyle 1 line color #40f000 key "Q_{inj}=3"
