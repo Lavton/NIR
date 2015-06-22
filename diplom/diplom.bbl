@@ -1,0 +1,107 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\\ {\ttfamily\url{#1}}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{Krulls}
+\selectlanguageifdefined{english}
+\BibEmph{{Achterberg}~A., {Krulls}~W.~M.} {A fast simulation method for
+  particle acceleration}~// \BibEmph{\aap}. "---
+\newblock 1992. "--- \bblnov{}. "---
+\newblock Vol. 265. "---
+\newblock Pp.~L13--L16.
+
+\bibitem{ALS}
+\selectlanguageifdefined{english}
+\BibEmph{{Axford}~W.~I., {Leer}~E., {Skadron}~G.} {The acceleration of cosmic
+  rays by shock waves}~// \BibEmph{International Cosmic Ray Conference}. "---
+\newblock 1977. "---
+\newblock Vol.~11. "---
+\newblock Pp.~132--137.
+
+\bibitem{Bell1}
+\selectlanguageifdefined{english}
+\BibEmph{{Bell}~A.~R.} {The acceleration of cosmic rays in shock fronts. I}~//
+  \BibEmph{\mnras}. "---
+\newblock 1978. "--- \bbljan{}. "---
+\newblock Vol. 182. "---
+\newblock Pp.~147--156.
+
+\bibitem{Bell2}
+\selectlanguageifdefined{english}
+\BibEmph{{Bell}~A.~R.} {The acceleration of cosmic rays in shock fronts. II}~//
+  \BibEmph{\mnras}. "---
+\newblock 1978. "--- \bblfeb{}. "---
+\newblock Vol. 182. "---
+\newblock Pp.~443--455.
+
+\bibitem{berezhko}
+\selectlanguageifdefined{english}
+\BibEmph{{Berezhko}~E.~G., {Krymski{\u i}}~G.~F.} {REVIEWS OF TOPICAL PROBLEMS:
+  Acceleration of cosmic rays by shock waves}~// \BibEmph{Soviet Physics
+  Uspekhi}. "---
+\newblock 1988. "--- \bbljan{}. "---
+\newblock Vol.~31. "---
+\newblock Pp.~27--51.
+
+\bibitem{BO}
+\selectlanguageifdefined{english}
+\BibEmph{{Blandford}~R.~D., {Ostriker}~J.~P.} {Particle acceleration by
+  astrophysical shocks}~// \BibEmph{\apjl}. "---
+\newblock 1978. "--- \bblapr{}. "---
+\newblock Vol. 221. "---
+\newblock Pp.~L29--L32.
+
+\bibitem{Glad1}
+\selectlanguageifdefined{english}
+\BibEmph{{Bykov}~A.~M., {Gladilin}~P.~E., {Osipov}~S.~M.} {Non-linear model of
+  particle acceleration at colliding shock flows}~// \BibEmph{\mnras}. "---
+\newblock 2013. "--- \bblmar{}. "---
+\newblock Vol. 429. "---
+\newblock Pp.~2755--2762.
+
+\bibitem{Glad2}
+\selectlanguageifdefined{english}
+\BibEmph{{Gladilin}~P.~E., {Bykov}~A.~M., {Osipov}~S.~M.} {Time-dependent model
+  of particle acceleration in the vicinity of approaching magnetohydrodynamic
+  flows}. "---
+\newblock 2013. "--- \bblmar{}.
+
+\bibitem{Glad3}
+\selectlanguageifdefined{english}
+\BibEmph{{Gladilin}~P.~E., {Bykov}~A.~M., {Osipov}~S.~M.} {Maximal energies of
+  the particles accelerated by the system of converging magnetohydrodynamic
+  flows}. "---
+\newblock 2014. "--- \bblmar{}.
+
+\bibitem{Kang}
+\selectlanguageifdefined{english}
+\BibEmph{{Kang}~H.} {Energy spectrum of nonthermal electrons accelerated at a
+  plane shock}. "---
+\newblock 2011. "--- \bblapr{}.
+
+\bibitem{Crim}
+\selectlanguageifdefined{english}
+\BibEmph{{Krymskii}~G.~F.} {A regular mechanism for the acceleration of charged
+  particles on the front of a shock wave}~// \BibEmph{Akademiia Nauk SSSR
+  Doklady}. "---
+\newblock 1977. "--- \bbljun{}. "---
+\newblock Vol. 234. "---
+\newblock Pp.~1306--1308.
+
+\bibitem{progon}
+\selectlanguageifdefined{english}
+\BibEmph{Годунов С.~К.~Рябенький В.~С.} {Введение
+  в теорию разностных схем}. "---
+\newblock 1962.
+
+\bibitem{Ito}
+\selectlanguageifdefined{english}
+\BibEmph{С.~Степанов~С.} {Стохастический мир}. "---
+\newblock 2012.
+
+\end{thebibliography}
