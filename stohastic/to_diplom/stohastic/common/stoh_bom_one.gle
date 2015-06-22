@@ -1,0 +1,9 @@
+begin graph 
+size 20 20
+xtitle log_{10}{p/m_pc}
+ytitle f_pp^2
+key pos tr 
+data output
+d1 line color #ff0000 key "modeling"
+d2 lwidth 0.09 line color #00ff00 key "running avarange"
+end graph

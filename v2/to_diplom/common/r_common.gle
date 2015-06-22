@@ -4,7 +4,7 @@ size 20 20
 key pos tr 
 !yaxis log min 0.0001 max 0.4
 xtitle log_{10}{p/m_pc}
-ytitle f_{p}
+ytitle f_{p}p^2
 !xaxis log
 data fp4full.dat
 d100 lwidth 0.05 line color #ff0000 key "on shock front"

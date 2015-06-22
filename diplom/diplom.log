@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.8)  22 JUN 2015 01:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.8)  22 JUN 2015 08:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1351,12 +1351,12 @@ Package babel Info: Redefining russian shorthand "|
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 307.
 
-<./images/r_common.png, id=163, 1388.18625pt x 1386.17876pt>
+<./images/r_common.png, id=163, 1387.1825pt x 1386.17876pt>
 File: ./images/r_common.png Graphic file (type png)
 
 <use ./images/r_common.png>
 Package pdftex.def Info: ./images/r_common.png used on input line 317.
-(pdftex.def)             Requested size: 250.0pt x 249.62831pt.
+(pdftex.def)             Requested size: 250.0pt x 249.81868pt.
 Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 321.
 Package babel Info: Redefining russian shorthand "~
@@ -1416,12 +1416,12 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 371.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 371.
- <./images/stoh_bom_one.png, id=198, 1387.1825pt x 1386.17876pt>
+ <./images/stoh_bom_one.png, id=198, 1388.18625pt x 1386.17876pt>
 File: ./images/stoh_bom_one.png Graphic file (type png)
 
 <use ./images/stoh_bom_one.png>
 Package pdftex.def Info: ./images/stoh_bom_one.png used on input line 382.
-(pdftex.def)             Requested size: 250.0pt x 249.81868pt.
+(pdftex.def)             Requested size: 250.0pt x 249.62831pt.
 Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 386.
 Package babel Info: Redefining russian shorthand "~
@@ -1431,12 +1431,12 @@ Package babel Info: Redefining russian shorthand "|
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 386.
  [14]
-<./images/stoh_particles.png, id=206, 1388.18625pt x 1386.17876pt>
+<./images/stoh_particles.png, id=206, 1387.1825pt x 1385.175pt>
 File: ./images/stoh_particles.png Graphic file (type png)
 
 <use ./images/stoh_particles.png>
 Package pdftex.def Info: ./images/stoh_particles.png used on input line 396.
-(pdftex.def)             Requested size: 250.0pt x 249.62831pt.
+(pdftex.def)             Requested size: 250.0pt x 249.63779pt.
 Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 400.
 Package babel Info: Redefining russian shorthand "~
@@ -1480,13 +1480,12 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 442.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 442.
-
-<./images/stoh_sinh_or_not.png, id=229, 1388.18625pt x 1386.17876pt>
+ <./images/stoh_sinh_or_not.png, id=229, 597.6729pt x 845.19765pt>
 File: ./images/stoh_sinh_or_not.png Graphic file (type png)
 
 <use ./images/stoh_sinh_or_not.png>
 Package pdftex.def Info: ./images/stoh_sinh_or_not.png used on input line 447.
-(pdftex.def)             Requested size: 250.0pt x 249.62831pt.
+(pdftex.def)             Requested size: 250.0pt x 353.53616pt.
 Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 451.
 Package babel Info: Redefining russian shorthand "~
@@ -1510,20 +1509,20 @@ File: ./images/stoh_px.png Graphic file (type png)
 Package pdftex.def Info: ./images/stoh_px.png used on input line 456.
 (pdftex.def)             Requested size: 145.11053pt x 144.8868pt.
 
-<./images/stoh_two_or_one.png, id=242, 1387.1825pt x 1386.17876pt>
+<./images/stoh_two_or_one.png, id=242, 597.6729pt x 845.19765pt>
 File: ./images/stoh_two_or_one.png Graphic file (type png)
 
 <use ./images/stoh_two_or_one.png>
 Package pdftex.def Info: ./images/stoh_two_or_one.png used on input line 465.
-(pdftex.def)             Requested size: 250.0pt x 249.81868pt.
+(pdftex.def)             Requested size: 250.0pt x 353.53616pt.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 469.
+(babel)             in language  on input line 468.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 469.
+(babel)             in language  on input line 468.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 469.
+(babel)             in language  on input line 468.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 469.
+(babel)             in language  on input line 468.
  [19 <./images/stoh_sinh_or_not.png> <./images/stoh_x.png> <./images/stoh_px.pn
 g>]
 Package babel Info: Redefining russian shorthand "|
@@ -1531,12 +1530,12 @@ Package babel Info: Redefining russian shorthand "|
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 471.
 
-<./images/compare.png, id=250, 1387.1825pt x 1386.17876pt>
+<./images/compare.png, id=250, 1388.18625pt x 1386.17876pt>
 File: ./images/compare.png Graphic file (type png)
 
 <use ./images/compare.png>
 Package pdftex.def Info: ./images/compare.png used on input line 476.
-(pdftex.def)             Requested size: 250.0pt x 249.81868pt.
+(pdftex.def)             Requested size: 250.0pt x 249.62831pt.
 Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 480.
 Package babel Info: Redefining russian shorthand "~
@@ -1617,7 +1616,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy7.pfb>
-Output written on diplom.pdf (24 pages, 1104323 bytes).
+Output written on diplom.pdf (24 pages, 1114698 bytes).
 PDF statistics:
  569 PDF objects out of 1000 (max. 8388607)
  297 compressed objects within 3 object streams

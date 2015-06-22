@@ -4,4 +4,4 @@
 \beamer@sectionintoc {2}{\IeC {\CYRC }\IeC {\cyre }\IeC {\cyrl }\IeC {\cyri } \IeC {\cyri } \IeC {\cyrz }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyri }}{7}{0}{2}
 \beamer@sectionintoc {3}{\IeC {\CYRM }\IeC {\cyre }\IeC {\cyrt }\IeC {\cyro }\IeC {\cyrd }\IeC {\cyrery }}{9}{0}{3}
 \beamer@sectionintoc {4}{\IeC {\CYRR }\IeC {\cyre }\IeC {\cyrz }\IeC {\cyru }\IeC {\cyrl }\IeC {\cyrsftsn }\IeC {\cyrt }\IeC {\cyra }\IeC {\cyrt }\IeC {\cyrery }}{18}{0}{4}
-\beamer@sectionintoc {5}{\IeC {\CYRV }\IeC {\cyrery }\IeC {\cyrv }\IeC {\cyro }\IeC {\cyrd }\IeC {\cyrery }}{26}{0}{5}
+\beamer@sectionintoc {5}{\IeC {\CYRV }\IeC {\cyrery }\IeC {\cyrv }\IeC {\cyro }\IeC {\cyrd }\IeC {\cyrery }}{25}{0}{5}
