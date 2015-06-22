@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.8)  22 JUN 2015 09:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.6.8)  22 JUN 2015 09:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1570,7 +1570,16 @@ Package babel Info: Redefining russian shorthand "|
 (babel)             in language  on input line 508.
 Package babel Info: Redefining russian shorthand "~
 (babel)             in language  on input line 508.
- [22] (./diplom.bbl
+ [22]
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language  on input line 519.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language  on input line 519.
+Package babel Info: Redefining russian shorthand "|
+(babel)             in language  on input line 519.
+Package babel Info: Redefining russian shorthand "~
+(babel)             in language  on input line 519.
+ [23] (./diplom.bbl
 ! Undefined control sequence.
 <recently read> \aap 
                      
@@ -1587,15 +1596,6 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 26.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 26.
-Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 26.
-Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 26.
-[23]
 ! Undefined control sequence.
 <recently read> \mnras 
                        
@@ -1722,13 +1722,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining russian shorthand "|
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 95.
 Package babel Info: Redefining russian shorthand "~
-(babel)             in language  on input line 102.
+(babel)             in language  on input line 95.
 [24])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 523.
 Package babel Info: Redefining russian shorthand "|
@@ -1775,7 +1775,7 @@ nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb>
-Output written on diplom.pdf (26 pages, 1155011 bytes).
+Output written on diplom.pdf (26 pages, 1154995 bytes).
 PDF statistics:
  720 PDF objects out of 1000 (max. 8388607)
  341 compressed objects within 4 object streams
